@@ -8,7 +8,7 @@ const ip = require('dev-ip')
 const webpack = require('webpack')
 
 console.log('start compiling...')
-
+// 测试哈哈
 const startTime = Date.now()
 let env = process.env.NODE_ENV || 'development'
 
