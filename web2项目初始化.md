@@ -2,14 +2,18 @@
 
 ### 项目初始化
 
+```
+// 这里,可根据实际情况选择是否需要typescript,如果不需要,可忽略
 npx create-react-app my-app --template typescript
+```
 
 ### 添加自定义的webpack打包命令
 
 ```
+// 这里是我们需要运行的命令
 "scripts": {
-    "start": "NODE_ENV=development npm run dev",
-    "build": "NODE_ENV=production npm run compile",
+    "start": "NODE_ENV=development npm run dev", // 本地调试使用
+    "build": "NODE_ENV=production npm run compile", // 上线打包使用
     "dev": "node scripts/server.js",
     "compile": "node scripts/compile.js",
     "lint": "eslint --ext .ts,.tsx src --fix",
@@ -50,7 +54,7 @@ npm install -D eslint@latest
 npm install -D @typescript-eslint/parser@latest
 规则插件
 npm install -D @typescript-eslint/eslint-plugin@latest
-
+// 创建我们的规则文件.eslintrc.js
 module.exports = {
   parser: "@typescript-eslint/parser",
   ignorePatterns: ['.eslintrc.js'],
@@ -106,11 +110,11 @@ npm install -D eslint-plugin-prettier@latest
 npm install -D eslint-config-prettier@latest
 
 然后只需要在extends添加即可，这样，eslint & prettier的规则就可以同时使用了
-
+// 添加.eslintrc.js
 {
   "extends": ["plugin:prettier/recommended"]
 }
-
+// 创建.prettierrc
 {
   "semi": false,
   "singleQuote": true,
@@ -407,8 +411,81 @@ const runServer = async () => {
 runServer()
 ```
 
-环境变量
+### 7. tsconfig.json
+
+该文件是用来指定编译Ts文件的时候的一些配置信息
+
+这个文件应该是`create-react-app`的时候生成的,生成后我们稍微的改变一下我们的配置信息,大致的配置说明如下:
 
 ```
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    // 因为是一个浏览器项目(import),所以模块的引入方式就是esnext
+    "module": "esnext",
+    "moduleResolution": "node",
+    // 是否允许将JSON导入作为模块
+    "resolveJsonModule": true,
+    // Ts编译器会对每个文件进行单独的编译
+    "isolatedModules": true,
+    // 是否生成输出文件,false为输出,true为不输出
+    "noEmit": false,
+    // 在ts中使用React的jsx语法
+    "jsx": "react-jsx",
+    // 在ts中使用webpack别名的时候,记得也配置一下
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  // 编译所包含的文件夹
+  "include": ["src"],
+  // 编译排除的文件夹
+  "exclude": ["node_modules", "build"]
+}
+```
 
+你可以认为我们把Ts转化为Js的时候的一些配置
+
+## 8. 适配的问题 -- postCss & tailwindCss
+
+我的整体思想:
+
+按照`效果图px`来书写css,页面输出rem的单位,可在统一的一个地方修改rem的大小,从而达到改变页面元素大小的效果
+
+纯移动端
+
+width : 100% + flex 自适应布局
+
+PC/移动响应式
+
+根据视口的宽度来判断PC/移动,从而写两套规则即可,这里,其实可以细分出多套,但是自我感觉没必要
+
+我们首先添加postcss
+
+```
+// postcss.config.js
+module.exports = {
+  plugins: [
+    require('postcss-preset-env'),
+    // 将我们的px转化成rem
+    require('postcss-pxtorem')({
+      rootValue: 10,
+      unitPrecision: 5,
+      propList: ['*'],
+      // selectorBlackList: [/^p/],
+      selectorBlackList: [],
+      replace: true,
+      mediaQuery: false,
+      minPixelValue: 6,
+    }),
+  ],
+}
 ```
