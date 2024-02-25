@@ -11,5 +11,6 @@ module.exports = {
       mediaQuery: false,
       minPixelValue: 6,
     }),
+    require('tailwindcss')({}),
   ],
 }

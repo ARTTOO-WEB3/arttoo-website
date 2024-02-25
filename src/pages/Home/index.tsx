@@ -3,7 +3,7 @@ import './index.scss'
 const Home: FC = () => {
   return (
     <div className="homeContainer">
-      <p>beging home !!! let is start !!!!</p>
+      <h1 className="text-3xl font-bold underline">Hello world!</h1>
     </div>
   )
 }

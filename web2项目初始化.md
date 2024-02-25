@@ -489,3 +489,44 @@ module.exports = {
   ],
 }
 ```
+
+根据自己的实际情况来判断是否需要加入tailwindCss
+
+```
+npm install -D tailwindcss
+npx tailwindcss init
+```
+
+添加到postcss的配置文件中去
+
+```
+module.exports = {
+  plugins: [
+    // ...
+    require('tailwindcss')({}),
+  ],
+}
+```
+
+配置文件设置
+
+```
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
+将taildwind中的css添加到自己的入口的文件中 - index.scss
+
+```
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+```
+
+因为这里我们已经强制将tailwindcss中的1rem = 16px改为了我们自己设置的1rem = 10px了,所以,针对大多数情况下的跟大小相关的css类将不再可以使用了,我们需要整理下常用的tailwindcss的属性
