@@ -49,6 +49,9 @@ npm install -D eslint@latest
 
 ### 添加解析器 & 规则
 
+
+***这个主要是针对typescript的支持***
+
 ```
 解析器
 npm install -D @typescript-eslint/parser@latest
@@ -103,6 +106,9 @@ npm install -D lint-staged@latest
 ```
 
 ### 4. 添加 prettier 以及 .prettierrc
+
+
+***这个主要是对prettier的支持***
 
 ```
 npm install -D prettier@latest

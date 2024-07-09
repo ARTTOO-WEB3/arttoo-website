@@ -16,9 +16,10 @@
     "noEmit": false,
     "jsx": "react-jsx",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "public/*": ["./public/*"]
     }
   },
-  "include": ["src"],
+  "include": ["src", "declarations.d.ts"],
   "exclude": ["node_modules", "build"]
 }
