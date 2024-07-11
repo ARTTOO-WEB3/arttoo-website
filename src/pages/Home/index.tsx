@@ -1,5 +1,6 @@
 import React, { FC, useEffect, useRef, useState } from 'react'
 import './index.scss'
+import logo from '@/assets/images/logo.png'
 // seciton-secured
 import securedA from '@/assets/images/secured/secured-a.png'
 import securedB from '@/assets/images/secured/secured-b.png'
@@ -39,14 +40,15 @@ import aboutF from '@/assets/images/about/about-f.png'
 import aboutG from '@/assets/images/about/about-g.png'
 import aboutH from '@/assets/images/about/about-h.png'
 const Home: FC = () => {
+  const [openMenu, setOpenMenu] = useState(false)
   return (
-    <div className="homeContainer">
-      <header>
-        <div className="logo">
-          <p>logo</p>
+    <div className="homeContainer w-full">
+      <header className="w-full fixed pt-[30px] lg:pt-[80px]  px-[20px] lg:px-[80px] flex justify-between items-center">
+        <div className="logo lg:w-[223px] lg:h-[43px] w-[145px] h-[28px]">
+          <img className="lg:w-[223px] lg:h-[43px] w-[145px] h-[28px]" src={logo} alt="Arttoo" />
         </div>
-        <nav className="navList">
-          <ul>
+        <nav className="navList hidden lg:block">
+          <ul className="flex justify-between items-center gap-x-[106px] font-[500] leading-[21px] text-[18px] text-[#FFFFFF]">
             <li>
               <a href="#">ARTWORKS</a>
             </li>
@@ -61,16 +63,78 @@ const Home: FC = () => {
             </li>
           </ul>
         </nav>
-        <div className="button">button</div>
+        <div className="lg:hidden flex items-center justify-center">
+          <button type="button" onClick={() => setOpenMenu(true)}>
+            <svg
+              className="w-[28px] h-[28px] text-[#FFFFFF]"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="1.5"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+          </button>
+        </div>
+        {/* mobile */}
+        <div
+          className={`fixed inset-y-0 right-0 z-50 w-full bg-white overflow-y-auto py-[30px] sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 lg:hidden ${
+            openMenu ? 'block' : 'hidden'
+          }`}
+          role="dialog"
+          aria-modal="true"
+        >
+          <div className="flex items-center justify-between  px-[20px]">
+            <a href="#">
+              <img className="lg:w-[223px] lg:h-[43px] w-[145px] h-[28px]" src={logo} alt="Arttoo" />
+            </a>
+            <button type="button" className="text-gray-700" onClick={() => setOpenMenu(false)}>
+              <span className="sr-only">Close menu</span>
+              <svg
+                className="w-[28px] h-[28px] text-[#9c9c9c]"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <div className="mt-[30px] px-[20px] flow-root">
+            <a href="#" className="font-[500] py-[10px] leading-[21px] text-[18px] block leading-[21px] text-[#9c9c9c]">
+              ARTWORKS
+            </a>
+            <a href="#" className="font-[500] py-[10px] leading-[21px] text-[18px] block leading-[21px] text-[#9c9c9c]">
+              LEARN
+            </a>
+            <a href="#" className="font-[500] py-[10px] leading-[21px] text-[18px] block leading-[21px] text-[#9c9c9c]">
+              ABOUT
+            </a>
+            <a href="#" className="font-[500] py-[10px] leading-[21px] text-[18px] block leading-[21px] text-[#9c9c9c]">
+              CONTACT US
+            </a>
+          </div>
+        </div>
       </header>
-      <main>
-        <section className="banner">
-          <p>OWN A PIECE OF</p>
-          <p>HISTORY WITH ARTTOO</p>
-          <p>Invest in renowned masterpieces with just a fraction of its cost</p>
-          <p>LEARN MORE</p>
+      <main className="w-full">
+        <section className="banner lg:h-[1080px] flex flex-col items-start justify-start w-full bg-[#9c9c9c] lg:pt-[123px] pt-[58px] pb-[100px] lg:pb-0 px-[20px] lg:px-[80px]">
+          <p className="text-[32px] leading-[38px] tracking-[2px] lg:tracking-[10px] lg:text-[132px] lg:leading-[155px] text-[#FFFFFF] lg:pt-[103px] pt-[112px]">
+            OWN A PIECE OF
+          </p>
+          <p className="text-[32px] leading-[38px] tracking-[2px] lg:tracking-[10px] lg:text-[132px] lg:leading-[155px] text-[#FFFFFF]">
+            HISTORY WITH ARTTOO
+          </p>
+          <p className="font-[400] text-[12px] leading-[14px] lg:text-[16px] lg:leading-[19px] pt-[28px] lg:pt-[19px] text-[#FFFFFF]">
+            Invest in renowned masterpieces with just a fraction of its cost
+          </p>
+          <p className="flex self-center lg:self-start  items-center justify-center lg:mt-[125px] mt-[35px] text-[14px] leading-[16px] lg:text-[18px] lg:leading-[21px] font-[400] text-[#000000] bg-[#E4FF1A] rounded-[978px] lg:px-[52px] lg:py-[22px] px-[38px] py-[16px]">
+            LEARN MORE
+          </p>
         </section>
-        <section className="about">
+        <section className="about w-full">
           <p>Art is the visual proof of history</p>
           <p>consensus mechanism for humanity</p>
           <div className="content">
@@ -149,7 +213,7 @@ const Home: FC = () => {
             </div>
           </div>
         </section>
-        <section className="explore">
+        <section className="explore w-full">
           <p>Own a Piece of History in 3 Simple Steps</p>
           <p>001/003</p>
           <p>EXPLORE</p>
@@ -172,7 +236,7 @@ const Home: FC = () => {
             </li>
           </ul>
         </section>
-        <section className="invest">
+        <section className="invest w-full">
           <div className="left">
             <div className="picList">
               <img src={pixA} />
@@ -215,7 +279,7 @@ const Home: FC = () => {
             <img src={doorB} />
           </div>
         </section>
-        <section className="value">
+        <section className="value w-full">
           <ul className="textList">
             <li>
               <p>Henri Matisse</p>
@@ -240,7 +304,7 @@ const Home: FC = () => {
           <p>100,000,000 USD</p>
           <p>Explore Artworks</p>
         </section>
-        <section className="secured">
+        <section className="secured w-full">
           <p>YOUR INVESTMENTS ARE SECURED WITH US</p>
           <ul>
             <li>
@@ -278,7 +342,7 @@ const Home: FC = () => {
           </ul>
         </section>
       </main>
-      <footer>
+      <footer className="w-full">
         <p className="title">READY TO OWN YOUR PIECE OF HISTORY?</p>
         <form>
           <input type="text" placeholder="Johndoe@gmail.com" />
