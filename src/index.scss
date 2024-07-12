@@ -11,3 +11,23 @@ body,
   height: auto;
   user-select: none;
 }
+@font-face {
+  font-family: ' NewEddy';
+  src: url(@/assets/fonts/NewEddy-Display.ttf);
+}
+@font-face {
+  font-family: 'Lato';
+  src: url(@/assets/fonts/Lato-Regular.ttf);
+}
+font-faace {
+  font-family: 'PoppinsMedium';
+  src: url(@/assets/fonts/Poppins-Medium.ttf);
+}
+@font-face {
+  font-family: 'PoppinsLight';
+  src: url(@/assets/fonts/Poppins-Light.ttf);
+}
+@font-face {
+  font-family: 'PoppinsRegular';
+  src: url(@/assets/fonts/Poppins-Regular.ttf);
+}

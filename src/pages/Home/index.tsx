@@ -120,7 +120,7 @@ const Home: FC = () => {
         </div>
       </header>
       <main className="w-full">
-        <section className="banner lg:h-[1080px] flex flex-col items-start justify-start w-full bg-[#9c9c9c] lg:pt-[123px] pt-[58px] pb-[100px] lg:pb-0 px-[20px] lg:px-[80px]">
+        <section className="banner flex flex-col items-start justify-start w-full bg-[#9c9c9c] lg:pt-[123px] pt-[58px] pb-[100px] lg:pb-[327px] px-[20px] lg:px-[80px]">
           <p className="text-[32px] leading-[38px] tracking-[2px] lg:tracking-[10px] lg:text-[132px] lg:leading-[155px] text-[#FFFFFF] lg:pt-[103px] pt-[112px]">
             OWN A PIECE OF
           </p>
@@ -134,59 +134,67 @@ const Home: FC = () => {
             LEARN MORE
           </p>
         </section>
-        <section className="about w-full">
-          <p>Art is the visual proof of history</p>
-          <p>consensus mechanism for humanity</p>
-          <div className="content">
-            <ul>
+        <section className="about w-full flex flex-col items-start justify-start px-[20px] lg:px-[80px] lg:pt-[180px] pt-[90px] pb-[90px] lg:pb-[505px]">
+          <p className="lg:pl-[233px] pl-[29px] font-[500] text-[18px] leading-[21px] lg:text-[75px] lg:leading-[75px]">
+            ART IS THE VISUAL PROOF OF HISTORY
+          </p>
+          <p className="font-[500] text-[18px] leading-[21px] lg:text-[75px] lg:leading-[75px]">
+            CONSENSUS MECHANISM FOR HUMANITY
+          </p>
+          <div className="content relative w-full lg:pt-[27px] pt-[16px]">
+            <ul className="lg:ml-[80px]  ml-0 flex items-start justify-start gap-[16px]">
               <li>
-                <img src={aboutA} />
+                <img className="w-[28px] h-[195px] lg:w-[75px] lg:h-[518px]" src={aboutA} />
               </li>
               <li>
-                <img src={aboutB} />
+                <img
+                  className="w-[28px] relative lg:top-[-73px] top-[-27px] z-[-10] h-[195px] lg:w-[75px] lg:h-[518px]"
+                  src={aboutB}
+                />
               </li>
               <li>
-                <img src={aboutC} />
+                <img className="w-[28px] h-[195px] lg:w-[75px] lg:h-[518px]" src={aboutC} />
               </li>
               <li>
-                <img src={aboutD} />
+                <img className="w-[28px] h-[195px] lg:w-[75px] lg:h-[518px]" src={aboutD} />
               </li>
               <li>
-                <img src={aboutE} />
+                <img className="w-[28px] h-[195px] lg:w-[75px] lg:h-[518px]" src={aboutE} />
               </li>
               <li>
-                <img src={aboutF} />
+                <img className="w-[28px] h-[195px] lg:w-[75px] lg:h-[518px]" src={aboutF} />
               </li>
               <li>
-                <img src={aboutG} />
+                <img
+                  className="w-[28px] relative lg:top-[195px] top-[74px] h-[195px] lg:w-[75px] lg:h-[518px]"
+                  src={aboutG}
+                />
               </li>
               <li>
-                <img src={aboutH} />
+                <img className="w-[28px] h-[195px] lg:w-[75px] lg:h-[518px]" src={aboutH} />
               </li>
             </ul>
-            <div className="right">
-              <div className="floor-1">
-                <p>Arttoo isn&apos;t just about returns</p>
-                <p>
-                  It&apos;s about unlocking a world of possibilities. Become part of a vibrant art community, connect
-                  with a timeless piece of culture, and watch your investment grow alongside your passion.
-                </p>
-              </div>
-              <div className="floor-2">
-                <p>
-                  Start investing in fractional shares of legacy masterpieces via a collection curated by
-                  ex-Sotheby&apos;s and Christie&apos;s specialists, with no auction house markups, no gallery markups,
-                  no hidden true-up fees.
-                </p>
-                <p>
-                  Also, no need to track provenance anymore, all transactions are secure, transparent, and regulated
-                  through the beauty of blockchain technologies.
-                </p>
-              </div>
+            <div className="floor-1 lg:hidden lg:absolute lg:right-0 lg:top-0 mt-[122px] lg:mt-[0]">
+              <p>
+                Start investing in fractional shares of legacy masterpieces via a collection curated by
+                ex-Sotheby&apos;s and Christie&apos;s specialists, with no auction house markups, no gallery markups, no
+                hidden true-up fees.
+              </p>
+              <p>
+                Also, no need to track provenance anymore, all transactions are secure, transparent, and regulated
+                through the beauty of blockchain technologies.
+              </p>
+            </div>
+            <div className="floor-2 lg:hidden lg:absolute lg:right-0 lg:top-0">
+              <p className="inline-block">Arttoo isn&apos;t just about returns</p>
+              <p className="inline-block">
+                It&apos;s about unlocking a world of possibilities. Become part of a vibrant art community, connect with
+                a timeless piece of culture, and watch your investment grow alongside your passion.
+              </p>
             </div>
           </div>
         </section>
-        <section className="data">
+        <section className="data w-full bg-[#eeeeee]">
           <div className="left">
             <img src={dataA} />
             <ul>
