@@ -43,7 +43,7 @@ const Home: FC = () => {
   const [openMenu, setOpenMenu] = useState(false)
   return (
     <div className="homeContainer w-full">
-      <header className="w-full fixed pt-[30px] lg:pt-[80px]  px-[20px] lg:px-[80px] flex justify-between items-center">
+      <header className="w-full fixed pt-[30px] lg:pt-[60px] 2xl:pt-[80px] px-[20px] 2xl:px-[80px] lg:px-[60px] flex justify-between items-center">
         <div className="logo lg:w-[223px] lg:h-[43px] w-[145px] h-[28px]">
           <img className="lg:w-[223px] lg:h-[43px] w-[145px] h-[28px]" src={logo} alt="Arttoo" />
         </div>
@@ -132,8 +132,8 @@ const Home: FC = () => {
         </div>
       </header>
       <main className="w-full">
-        <section className="banner flex flex-col items-start justify-start w-full bg-[#9c9c9c] lg:pt-[123px] pt-[58px] pb-[100px] lg:pb-[327px] px-[20px] lg:px-[80px]">
-          <p className="font-[NewEddy] text-[32px] leading-[38px] tracking-[2px] lg:tracking-[10px] 2xl:text-[132px] 2xl:leading[155px] lg:text-[99px] lg:leading-[116px] text-[#FFFFFF] lg:pt-[103px] pt-[112px]">
+        <section className="banner flex flex-col items-start justify-start w-full bg-[#9c9c9c] 2xl:pt-[123px] lg:pt-[103px] pt-[58px] pb-[100px] 2xl:pb-[327px] lg:pb-[245px] px-[20px] 2xl:px-[80px] lg:px-[60px]">
+          <p className="font-[NewEddy] text-[32px] leading-[38px] tracking-[2px] lg:tracking-[10px] 2xl:text-[132px] 2xl:leading[155px] lg:text-[99px] lg:leading-[116px] text-[#FFFFFF] lg:pt-[77px] 2xl:pt-[103px] pt-[112px]">
             OWN A PIECE OF
           </p>
           <p className="font-[NewEddy] text-[32px] leading-[38px] tracking-[2px] lg:tracking-[10px] 2xl:text-[132px] 2xl:leading[155px] lg:text-[99px] lg:leading-[116px] text-[#FFFFFF]">
@@ -146,62 +146,62 @@ const Home: FC = () => {
             LEARN MORE
           </p>
         </section>
-        <section className="about w-full flex flex-col items-start justify-start px-[20px] lg:px-[80px] lg:pt-[180px] pt-[90px] pb-[90px] lg:pb-[505px]">
-          <p className="2xl:pl-[233px] lg:pl-[100px] pl-[29px] font-[NewEddy] font-[500] text-[18px] leading-[21px] lg:text-[75px] lg:leading-[75px]">
+        <section className="about w-full flex flex-col items-start justify-start px-[20px] lg:px-[60px] 2xl:px-[80px] 2xl:pt-[180px] lg:pt-[135px] pt-[90px] 2xl:pb-[309px] lg:pb-[232px] pb-[90px]">
+          <p className="2xl:pl-[233px] lg:pl-[100px] pl-[29px] font-[NewEddy] font-[500] text-[18px] leading-[21px] lg:text-[56px] lg:leading-[66px] 2xl:text-[75px] 2xl:leading-[88px]">
             ART IS THE VISUAL PROOF OF HISTORY
           </p>
-          <p className="font-[500] text-[18px] font-[NewEddy] leading-[21px] lg:text-[75px] lg:leading-[75px]">
+          <p className="font-[500] text-[18px] font-[NewEddy] leading-[21px] lg:text-[56px] lg:leading-[66px] 2xl:text-[75px] 2xl:leading-[88px]">
             CONSENSUS MECHANISM FOR HUMANITY
           </p>
-          <div className="content relative w-full lg:pt-[27px] pt-[16px]">
-            <ul className="lg:ml-[80px] ml-0 flex items-start justify-start gap-[6px] lg:gap-[16px]">
+          <div className="content w-full lg:pt-[27px] pt-[16px] flex lg:flex-row lg:gap-[100px] flex-col lg:items-center items-start justify-center">
+            <ul className="2xl:ml-[80px] lg:ml-[60px] ml-0 flex items-start justify-start gap-[6px] lg:gap-[12px] 2xl:gap-[16px]">
               <li>
-                <img className="w-[28px] h-[195px] lg:w-[75px] lg:h-[518px]" src={aboutA} />
+                <img className="w-[28px] lg:w-[56px] lg:h-[389px] h-[195px] 2xl:w-[75px] 2xl:h-[518px]" src={aboutA} />
               </li>
               <li>
                 <img
-                  className="w-[28px] relative lg:top-[-73px] top-[-27px] z-[-10] h-[195px] lg:w-[75px] lg:h-[518px]"
+                  className="w-[28px] h-[195px] lg:w-[56px] lg:h-[389px] 2xl:w-[75px] 2xl:h-[518px] mt-[-27px] lg:mt-[-73px] relative z-[-1]"
                   src={aboutB}
                 />
               </li>
               <li>
-                <img className="w-[28px] h-[195px] lg:w-[75px] lg:h-[518px]" src={aboutC} />
+                <img className="w-[28px] h-[195px] lg:w-[56px] lg:h-[389px] 2xl:w-[75px] 2xl:h-[518px]" src={aboutC} />
               </li>
               <li>
-                <img className="w-[28px] h-[195px] lg:w-[75px] lg:h-[518px]" src={aboutD} />
+                <img className="w-[28px] h-[195px] lg:w-[56px] lg:h-[389px] 2xl:w-[75px] 2xl:h-[518px]" src={aboutD} />
               </li>
               <li>
-                <img className="w-[28px] h-[195px] lg:w-[75px] lg:h-[518px]" src={aboutE} />
+                <img className="w-[28px] h-[195px] lg:w-[56px] lg:h-[389px] 2xl:w-[75px] 2xl:h-[518px]" src={aboutE} />
               </li>
               <li>
-                <img className="w-[28px] h-[195px] lg:w-[75px] lg:h-[518px]" src={aboutF} />
+                <img className="w-[28px] h-[195px] lg:w-[56px] lg:h-[389px] 2xl:w-[75px] 2xl:h-[518px]" src={aboutF} />
               </li>
               <li>
                 <img
-                  className="w-[28px] relative lg:top-[195px] top-[74px] h-[195px] lg:w-[75px] lg:h-[518px]"
+                  className="w-[28px] h-[195px] lg:w-[56px] lg:h-[389px] 2xl:w-[75px] 2xl:h-[518px] lg:mt-[195px] mt-[74px] top-[74px]"
                   src={aboutG}
                 />
               </li>
               <li>
-                <img className="w-[28px] h-[195px] lg:w-[75px] lg:h-[518px]" src={aboutH} />
+                <img className="w-[28px] h-[195px] lg:w-[56px] lg:h-[389px] 2xl:w-[75px] 2xl:h-[518px]" src={aboutH} />
               </li>
             </ul>
-            <div className="floor-1 mt-[122px] lg:mt-[0]">
-              <p className="font-[PoppinsRegular]">
+            <div className="floor-1 flex-1 mt-[48px] lg:mt-[0] flex flex-col items-center justify-center">
+              <p className="inline-block font-[NewEddy] 2xl:text-[40px] 2xl:leading-[47px] lg:text-[30px] lg:leading-[35px] text-[20px] leading-[23px]">
+                Arttoo isn&apos;t just about returns
+              </p>
+              <p className="font-[300] mt-[12px] 2xl:text-[16px] 2xl:leading-[26px] lg:text-[12px] lg:leading-[19px] text-[10px] leading-[16px] inline-block font-[PoppinsRegular]">
+                It&apos;s about unlocking a world of possibilities. Become part of a vibrant art community, connect with
+                a timeless piece of culture, and watch your investment grow alongside your passion.
+              </p>
+              <p className="font-[300] mt-[12px] 2xl:text-[16px] 2xl:leading-[26px] lg:text-[12px] lg:leading-[19px] text-[10px] leading-[16px] font-[PoppinsRegular]">
                 Start investing in fractional shares of legacy masterpieces via a collection curated by
                 ex-Sotheby&apos;s and Christie&apos;s specialists, with no auction house markups, no gallery markups, no
                 hidden true-up fees.
               </p>
-              <p className="font-[PoppinsRegular]">
+              <p className="font-[300] mt-[16px] 2xl:text-[16px] 2xl:leading-[26px] lg:text-[12px] lg:leading-[19px] text-[10px] leading-[16px] font-[PoppinsRegular]">
                 Also, no need to track provenance anymore, all transactions are secure, transparent, and regulated
                 through the beauty of blockchain technologies.
-              </p>
-            </div>
-            <div className="floor-2">
-              <p className="inline-block font-[NewEddy]">Arttoo isn&apos;t just about returns</p>
-              <p className="inline-block font-[PoppinsRegular]">
-                It&apos;s about unlocking a world of possibilities. Become part of a vibrant art community, connect with
-                a timeless piece of culture, and watch your investment grow alongside your passion.
               </p>
             </div>
           </div>
