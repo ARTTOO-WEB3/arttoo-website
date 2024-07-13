@@ -48,7 +48,7 @@ const Home: FC = () => {
           <img className="lg:w-[223px] lg:h-[43px] w-[145px] h-[28px]" src={logo} alt="Arttoo" />
         </div>
         <nav className="navList hidden lg:block">
-          <ul className="flex justify-between items-center gap-x-[106px] font-[500] leading-[21px] text-[18px] text-[#FFFFFF]">
+          <ul className="flex justify-between items-center 2xl:gap-x-[106px] lg:gap-x-[95px] font-[500] font-[PoppinsMedium] leading-[21px] text-[18px] text-[#FFFFFF]">
             <li>
               <a href="#">ARTWORKS</a>
             </li>
@@ -104,16 +104,28 @@ const Home: FC = () => {
             </button>
           </div>
           <div className="mt-[30px] px-[20px] flow-root">
-            <a href="#" className="font-[500] py-[10px] leading-[21px] text-[18px] block leading-[21px] text-[#9c9c9c]">
+            <a
+              href="#"
+              className="font-[PoppinsMedium] font-[500] py-[10px] leading-[21px] text-[18px] block leading-[21px] text-[#9c9c9c]"
+            >
               ARTWORKS
             </a>
-            <a href="#" className="font-[500] py-[10px] leading-[21px] text-[18px] block leading-[21px] text-[#9c9c9c]">
+            <a
+              href="#"
+              className="font-[PoppinsMedium] font-[500] py-[10px] leading-[21px] text-[18px] block leading-[21px] text-[#9c9c9c]"
+            >
               LEARN
             </a>
-            <a href="#" className="font-[500] py-[10px] leading-[21px] text-[18px] block leading-[21px] text-[#9c9c9c]">
+            <a
+              href="#"
+              className="font-[PoppinsMedium] font-[500] py-[10px] leading-[21px] text-[18px] block leading-[21px] text-[#9c9c9c]"
+            >
               ABOUT
             </a>
-            <a href="#" className="font-[500] py-[10px] leading-[21px] text-[18px] block leading-[21px] text-[#9c9c9c]">
+            <a
+              href="#"
+              className="font-[PoppinsMedium] font-[500] py-[10px] leading-[21px] text-[18px] block leading-[21px] text-[#9c9c9c]"
+            >
               CONTACT US
             </a>
           </div>
@@ -121,28 +133,28 @@ const Home: FC = () => {
       </header>
       <main className="w-full">
         <section className="banner flex flex-col items-start justify-start w-full bg-[#9c9c9c] lg:pt-[123px] pt-[58px] pb-[100px] lg:pb-[327px] px-[20px] lg:px-[80px]">
-          <p className="text-[32px] leading-[38px] tracking-[2px] lg:tracking-[10px] lg:text-[132px] lg:leading-[155px] text-[#FFFFFF] lg:pt-[103px] pt-[112px]">
+          <p className="font-[NewEddy] text-[32px] leading-[38px] tracking-[2px] lg:tracking-[10px] 2xl:text-[132px] 2xl:leading[155px] lg:text-[99px] lg:leading-[116px] text-[#FFFFFF] lg:pt-[103px] pt-[112px]">
             OWN A PIECE OF
           </p>
-          <p className="text-[32px] leading-[38px] tracking-[2px] lg:tracking-[10px] lg:text-[132px] lg:leading-[155px] text-[#FFFFFF]">
+          <p className="font-[NewEddy] text-[32px] leading-[38px] tracking-[2px] lg:tracking-[10px] 2xl:text-[132px] 2xl:leading[155px] lg:text-[99px] lg:leading-[116px] text-[#FFFFFF]">
             HISTORY WITH ARTTOO
           </p>
-          <p className="font-[400] text-[12px] leading-[14px] lg:text-[16px] lg:leading-[19px] pt-[28px] lg:pt-[19px] text-[#FFFFFF]">
+          <p className="font-[PoppinsRegular] font-[400] text-[12px] leading-[14px] lg:text-[16px] lg:leading-[19px] pt-[28px] lg:pt-[19px] text-[#FFFFFF]">
             Invest in renowned masterpieces with just a fraction of its cost
           </p>
-          <p className="flex self-center lg:self-start  items-center justify-center lg:mt-[125px] mt-[35px] text-[14px] leading-[16px] lg:text-[18px] lg:leading-[21px] font-[400] text-[#000000] bg-[#E4FF1A] rounded-[978px] lg:px-[52px] lg:py-[22px] px-[38px] py-[16px]">
+          <p className="font-[Lato] flex self-center lg:self-start  items-center justify-center lg:mt-[125px] mt-[35px] text-[14px] leading-[16px] lg:text-[18px] lg:leading-[21px] font-[400] text-[#000000] bg-[#E4FF1A] rounded-[978px] lg:px-[52px] lg:py-[22px] px-[38px] py-[16px]">
             LEARN MORE
           </p>
         </section>
         <section className="about w-full flex flex-col items-start justify-start px-[20px] lg:px-[80px] lg:pt-[180px] pt-[90px] pb-[90px] lg:pb-[505px]">
-          <p className="lg:pl-[233px] pl-[29px] font-[500] text-[18px] leading-[21px] lg:text-[75px] lg:leading-[75px]">
+          <p className="2xl:pl-[233px] lg:pl-[100px] pl-[29px] font-[NewEddy] font-[500] text-[18px] leading-[21px] lg:text-[75px] lg:leading-[75px]">
             ART IS THE VISUAL PROOF OF HISTORY
           </p>
-          <p className="font-[500] text-[18px] leading-[21px] lg:text-[75px] lg:leading-[75px]">
+          <p className="font-[500] text-[18px] font-[NewEddy] leading-[21px] lg:text-[75px] lg:leading-[75px]">
             CONSENSUS MECHANISM FOR HUMANITY
           </p>
           <div className="content relative w-full lg:pt-[27px] pt-[16px]">
-            <ul className="lg:ml-[80px]  ml-0 flex items-start justify-start gap-[16px]">
+            <ul className="lg:ml-[80px] ml-0 flex items-start justify-start gap-[6px] lg:gap-[16px]">
               <li>
                 <img className="w-[28px] h-[195px] lg:w-[75px] lg:h-[518px]" src={aboutA} />
               </li>
@@ -174,20 +186,20 @@ const Home: FC = () => {
                 <img className="w-[28px] h-[195px] lg:w-[75px] lg:h-[518px]" src={aboutH} />
               </li>
             </ul>
-            <div className="floor-1 lg:hidden lg:absolute lg:right-0 lg:top-0 mt-[122px] lg:mt-[0]">
-              <p>
+            <div className="floor-1 mt-[122px] lg:mt-[0]">
+              <p className="font-[PoppinsRegular]">
                 Start investing in fractional shares of legacy masterpieces via a collection curated by
                 ex-Sotheby&apos;s and Christie&apos;s specialists, with no auction house markups, no gallery markups, no
                 hidden true-up fees.
               </p>
-              <p>
+              <p className="font-[PoppinsRegular]">
                 Also, no need to track provenance anymore, all transactions are secure, transparent, and regulated
                 through the beauty of blockchain technologies.
               </p>
             </div>
-            <div className="floor-2 lg:hidden lg:absolute lg:right-0 lg:top-0">
-              <p className="inline-block">Arttoo isn&apos;t just about returns</p>
-              <p className="inline-block">
+            <div className="floor-2">
+              <p className="inline-block font-[NewEddy]">Arttoo isn&apos;t just about returns</p>
+              <p className="inline-block font-[PoppinsRegular]">
                 It&apos;s about unlocking a world of possibilities. Become part of a vibrant art community, connect with
                 a timeless piece of culture, and watch your investment grow alongside your passion.
               </p>

@@ -12,22 +12,29 @@ body,
   user-select: none;
 }
 @font-face {
-  font-family: ' NewEddy';
-  src: url(@/assets/fonts/NewEddy-Display.ttf);
+  font-family: 'NewEddy';
+  src: url(@/assets/fonts/NewEddy-Display.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Lato';
   src: url(@/assets/fonts/Lato-Regular.ttf);
+  font-display: swap;
 }
 font-faace {
   font-family: 'PoppinsMedium';
   src: url(@/assets/fonts/Poppins-Medium.ttf);
+  font-display: swap;
 }
 @font-face {
   font-family: 'PoppinsLight';
   src: url(@/assets/fonts/Poppins-Light.ttf);
+  font-display: swap;
 }
 @font-face {
   font-family: 'PoppinsRegular';
   src: url(@/assets/fonts/Poppins-Regular.ttf);
+  font-display: swap;
 }
