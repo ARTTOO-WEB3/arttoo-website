@@ -276,7 +276,7 @@ const Home: FC = () => {
           </ul>
         </section>
         <section className="invest w-full flex lg:flex-row flex-col-reverse  items-center justify-start 2xl:px-[40px] lg:px-[30px] px-[20px] 2xl:pt-[240px] lg:pt-[180px] pt-[188px] 2xl:pb-[212px] lg:pb-[159px] pb-[60px]">
-          <div className="left flex-1 flex lg:flex-row  w-full flex-col items-center justify-center lg:gap-[100px]">
+          <div className="left relative flex-1 flex lg:flex-row  w-full flex-col items-center justify-center lg:gap-[100px]">
             <div className="picList grid grid-cols-3 relative">
               <img className="w-[142px]  h-[auto]" src={pixA} />
               <img className="w-[142px]  h-[auto]" src={pixB} />
@@ -288,7 +288,7 @@ const Home: FC = () => {
               <img className="w-[142px]  h-[auto]" src={pixH} />
               <img className="w-[142px]  h-[auto]" src={pixI} />
             </div>
-            <div className="desc lg:self-end self-end">
+            <div className="desc absolute right-0 bottom-0 z-[-10]">
               <p className="font-[PoppinsRegular] font-[400] lg:text-[12px] lg:leading-[14px] text-[9px] leading-[11px]">
                 Nympheas
               </p>
