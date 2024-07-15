@@ -275,32 +275,42 @@ const Home: FC = () => {
             </li>
           </ul>
         </section>
-        <section className="invest w-full">
-          <div className="left">
-            <div className="picList">
-              <img src={pixA} />
-              <img src={pixB} />
-              <img src={pixC} />
-              <img src={pixD} />
-              <img src={pixE} />
-              <img src={pixF} />
-              <img src={pixG} />
-              <img src={pixH} />
-              <img src={pixI} />
+        <section className="invest w-full flex lg:flex-row flex-col-reverse  items-center justify-start 2xl:px-[40px] lg:px-[30px] px-[20px] 2xl:pt-[240px] lg:pt-[180px] pt-[188px] 2xl:pb-[212px] lg:pb-[159px] pb-[60px]">
+          <div className="left flex-1 flex lg:flex-row  w-full flex-col items-center justify-center lg:gap-[100px]">
+            <div className="picList grid grid-cols-3 relative">
+              <img className="w-[142px]  h-[auto]" src={pixA} />
+              <img className="w-[142px]  h-[auto]" src={pixB} />
+              <img className="w-[142px]  h-[auto]" src={pixC} />
+              <img className="w-[142px]  h-[auto]" src={pixD} />
+              <img className="w-[142px]  h-[auto]" src={pixE} />
+              <img className="w-[142px]  h-[auto]" src={pixF} />
+              <img className="w-[142px]  h-[auto]" src={pixG} />
+              <img className="w-[142px]  h-[auto]" src={pixH} />
+              <img className="w-[142px]  h-[auto]" src={pixI} />
             </div>
-            <div className="desc">
-              <p>Nympheas</p>
-              <p>Claude Monet</p>
-              <p>33,850,000 USD</p>
+            <div className="desc lg:self-end self-end">
+              <p className="font-[PoppinsRegular] font-[400] lg:text-[12px] lg:leading-[14px] text-[9px] leading-[11px]">
+                Nympheas
+              </p>
+              <p className="font-[PoppinsRegular] font-[400] lg:text-[12px] lg:leading-[14px] text-[9px] leading-[11px]">
+                Claude Monet
+              </p>
+              <p className="font-[PoppinsRegular] font-[400] lg:text-[12px] lg:leading-[14px] text-[9px] leading-[11px]">
+                33,850,000 USD
+              </p>
             </div>
           </div>
-          <div className="right">
-            <p>002/003</p>
-            <p>INVEST</p>
-            <p>Invest in a fraction of masterpieces for a fraction of its total cost via our platform</p>
+          <div className="right w-full flex-1">
+            <p className="font-[400] font-[PoppinsRegular] text-[12px] leading-[14px]">
+              002<span className="text-[#AAAAAA]"> / 003</span>
+            </p>
+            <p className="font-[NewEddy] lg:text-[75px] lg:leading-[88px] text-[38px] leading-[44px]">INVEST</p>
+            <p className="font-[PoppinsRegular] lg:mt-[20px] mt-[10px] lg:text-[18px] lg:leading-[21px] text-[12px] leading-[14px] mb-[32px]">
+              Invest in a fraction of masterpieces for a fraction of its total cost via our platform
+            </p>
           </div>
         </section>
-        <section className="earn">
+        <section className="earn flex lg:flex-row flex-col  items-start justify-start">
           <div className="left">
             <p>003/003</p>
             <p>EARN</p>
