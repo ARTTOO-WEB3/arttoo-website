@@ -275,7 +275,7 @@ const Home: FC = () => {
             </li>
           </ul>
         </section>
-        <section className="invest w-full flex lg:flex-row flex-col-reverse  items-center justify-start 2xl:px-[40px] lg:px-[30px] px-[20px] 2xl:pt-[240px] lg:pt-[180px] pt-[188px] 2xl:pb-[212px] lg:pb-[159px] pb-[60px]">
+        <section className="invest w-full flex lg:flex-row flex-col-reverse  items-center justify-start 2xl:px-[80px] lg:px-[60px] px-[20px] 2xl:pt-[240px] lg:pt-[180px] pt-[188px] 2xl:pb-[212px] lg:pb-[159px] pb-[60px]">
           <div className="left relative flex-1 flex lg:flex-row  w-full flex-col items-center justify-center lg:gap-[100px]">
             <div className="picList grid grid-cols-3 relative">
               <img className="w-[142px]  h-[auto]" src={pixA} />
@@ -301,7 +301,7 @@ const Home: FC = () => {
             </div>
           </div>
           <div className="right w-full flex-1">
-            <p className="font-[400] font-[PoppinsRegular] text-[12px] leading-[14px]">
+            <p className="font-[400] font-[PoppinsRegular] lg:text-[16px] lg:leading-[19px] text-[12px] leading-[14px]">
               002<span className="text-[#AAAAAA]"> / 003</span>
             </p>
             <p className="font-[NewEddy] lg:text-[75px] lg:leading-[88px] text-[38px] leading-[44px]">INVEST</p>
@@ -310,22 +310,42 @@ const Home: FC = () => {
             </p>
           </div>
         </section>
-        <section className="earn flex lg:flex-row flex-col  items-start justify-start">
-          <div className="left">
-            <p>003/003</p>
-            <p>EARN</p>
-            <p>
+        <section className="earn flex lg:flex-row flex-col  items-center justify-start 2xl:px-[80px] lg:px-[60px] px-[20px] 2xl:pt-[200px] lg:pt-[150px] pt-[188px] 2xl:pb-[174px] lg:pb-[131px] pb-[141px]">
+          <div className="left flex-1 w-full">
+            <p className="font-[400] font-[PoppinsRegular] text-[12px] leading-[14px] lg:text-[16px] lg:leading-[19px]">
+              003<span className="text-[#AAAAAA]"> / 003</span>
+            </p>
+            <p className="font-[NewEddy] lg:text-[100px] lg:leading-[117px] text-[38px] leading-[44px]">EARN</p>
+            <p className="font-[400] font-[PoppinsRegular] lg:text-[18px] lg:leading-[21px] text-[12px] leading-[14px]">
               Watch your investment grow in value through exhibitions of museums and galleries,NFT merchandise and so
               much more.
             </p>
           </div>
-          <div className="right">
-            <img src={roundA} />
-            <img src={roundB} />
-            <img src={startA} />
-            <img src={startB} />
-            <img src={doorA} />
-            <img src={doorB} />
+          <div className="right mt-[120px] lg:mt-0 flex-1 w-full flex lg:justify-start items-center justify-center">
+            <div className="relative">
+              <img
+                className="absolute top-0 lg:left-[-150px] left-[-90px] 2xl:w-[171px] 2xl:w-[149px] lg:w-[112px] w-[70px] h-[auto]"
+                src={roundA}
+              />
+              <img
+                className="absolute top-[41px] lg:right-[-100px] right-[-50px] 2xl:w-[91px] lg:w-[62px] w-[37px]"
+                src={roundB}
+              />
+              <img className="absolute top-[-70px] lg:left-[-80px] lg:w-[48px] w-[21px] h-[auto]" src={startA} />
+              <img
+                className="absolute top-[70px] lg:top-[120px] lg:right-[-125px] right-[-62px] lg:w-[52px] w-[21px] h-[auto]"
+                src={startB}
+              />
+              <img
+                className="absolute 2xl:right-[-107px] lg:right-[-47px] right-[-25px] z-[-2] lg:top-[-125px] top-[-51px] 2xl:w-[370px] lg:w-[278px] w-[150px] h-[auto]"
+                src={doorA}
+              />
+              <img
+                className="absolute 2xl:bottom-[-62px] lg:bottom-[-47px] bottom-[-25px] 2xl:right-[-132px] lg:right-[-99px] right-[-54px]  z-[-1] 2xl:w-[229px] lg:w-[172px]  w-[94px] h-[auto]"
+                src={doorB}
+              />
+              <img className="2xl:w-[415px] lg:w-[311px] w-[169px] h-[auto]" src={movePic} />
+            </div>
           </div>
         </section>
         <section className="value w-full">
