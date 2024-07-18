@@ -35,7 +35,7 @@ items-stretch 将项目在交叉轴上拉伸以填充容器（默认）
 // 是否换行
 flex-wrap 换行
 flex-wrap-reverse
-flfex-nowrap 不换行(默认)
+flex-nowrap 不换行(默认)
 
 // 单个项目的对齐
 

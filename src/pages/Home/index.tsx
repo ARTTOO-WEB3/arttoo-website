@@ -348,61 +348,125 @@ const Home: FC = () => {
             </div>
           </div>
         </section>
-        <section className="value w-full">
-          <ul className="textList">
-            <li>
-              <p>Henri Matisse</p>
-              <p>Michelangelo Merisi da Caravaggio</p>
-              <p>Tiziano Vecellio</p>
-              <p>Rembrandt Harmenszoon van Rijn</p>
+        <section className="value w-full relative">
+          <ul className="textList flex flex-col overflow-hidden shrink-0 font-[NewEddy] 2xl:text-[40px] 2xl:leading-[47px] lg:text-[30px] lg:leading-[35px] text-[20px] leading-[24px] 2xl:tracking-[3px] lg:tracking-[2px] tracking-[1px] opacity-[0.13]">
+            <li className="flex items-center justify-start 2xl:gap-[26px] lg:gap-[20px] gap-[13px] overflow-hidden shrink-0">
+              <p className="shrink-0">Henri Matisse</p>
+              <p className="shrink-0">Michelangelo Merisi da Caravaggio</p>
+              <p className="shrink-0">Tiziano Vecellio</p>
+              <p className="shrink-0">Rembrandt Harmenszoon van Rijn</p>
             </li>
-            <li>
-              <p>Vincent Willem van Gogh</p>
-              <p>Paul Cézanne</p>
-              <p>Johannes Vermeer</p>
-              <p>Rembrandt Harmenszoon van Rijn</p>
+            <li className="flex items-center justify-start 2xl:gap-[26px] lg:gap-[20px] gap-[13px] overflow-hidden shrink-0">
+              <p className="shrink-0">Vincent Willem van Gogh</p>
+              <p className="shrink-0">Paul Cézanne</p>
+              <p className="shrink-0">Johannes Vermeer</p>
+              <p className="shrink-0">Rembrandt Harmenszoon van Rijn</p>
             </li>
-            <li>
-              <p>Giotto di Bondone</p>
-              <p>Rembrandt Harmenszoon van Rijn</p>
-              <p>Jackson Pollock</p>
-              <p>Leonardo di ser Piero da Vinci</p>
+            <li className="flex items-center justify-start 2xl:gap-[26px] lg:gap-[20px] gap-[13px] overflow-hidden shrink-0">
+              <p className="shrink-0">Giotto di Bondone</p>
+              <p className="shrink-0">Rembrandt Harmenszoon van Rijn</p>
+              <p className="shrink-0">Jackson Pollock</p>
+              <p className="shrink-0">Leonardo di ser Piero da Vinci</p>
+            </li>
+            <li className="flex items-center justify-start 2xl:gap-[26px] lg:gap-[20px] gap-[13px] overflow-hidden shrink-0">
+              <p className="shrink-0">Tiziano Vecellio</p>
+              <p className="shrink-0">Raffaello Sanzio da Urbino</p>
+              <p className="shrink-0">Édouard Manet</p>
+              <p className="shrink-0">Raphael Sanzio</p>
+              <p className="shrink-0">Edgar Degas</p>
+            </li>
+            <li className="flex items-center justify-start 2xl:gap-[26px] lg:gap-[20px] gap-[13px] overflow-hidden shrink-0">
+              <p className="shrink-0">Raphael Sanzio</p>
+              <p className="shrink-0">Edgar Degas</p>
+              <p className="shrink-0">Oscar-Claude Monet</p>
+              <p className="shrink-0">Vincent Willem van Gogh</p>
+              <p className="shrink-0">Rembrandt Harmenszoon van Rijn</p>
+            </li>
+            <li className="flex items-center justify-start 2xl:gap-[26px] lg:gap-[20px] gap-[13px] overflow-hidden shrink-0">
+              <p className="shrink-0">Rembrandt Harmenszoon van Rijn</p>
+              <p className="shrink-0">Rembrandt Harmenszoon van Rijn</p>
+              <p className="shrink-0">Claude Monet</p>
+              <p className="shrink-0">Gustav Klimt</p>
+              <p className="shrink-0">Edgar Hilaire Germain de Gas</p>
+            </li>
+            <li className="flex items-center justify-start 2xl:gap-[26px] lg:gap-[20px] gap-[13px] overflow-hidden shrink-0">
+              <p className="shrink-0">Pablo Ruiz Picasso</p>
+              <p className="shrink-0">Leonardo di ser Piero da Vinci</p>
+              <p className="shrink-0">Raffaello Sanzio da Urbino</p>
+              <p className="shrink-0">Edgar Degas</p>
+            </li>
+            <li className="flex items-center justify-start 2xl:gap-[26px] lg:gap-[20px] gap-[13px] overflow-hidden shrink-0">
+              <p className="shrink-0">Henri Matisse</p>
+              <p className="shrink-0">Michelangelo Merisi da Caravaggio</p>
+              <p className="shrink-0">Tiziano Vecellio</p>
+              <p className="shrink-0">Rembrandt Harmenszoon van Rijn</p>
+            </li>
+            <li className="flex items-center justify-start 2xl:gap-[26px] lg:gap-[20px] gap-[13px] overflow-hidden shrink-0">
+              <p className="shrink-0">Giotto di Bondone</p>
+              <p className="shrink-0">Rembrandt Harmenszoon van Rijn</p>
+              <p className="shrink-0">Jackson Pollock</p>
+              <p className="shrink-0">Leonardo di ser Piero da Vinci</p>
+            </li>
+            <li className="flex items-center justify-start 2xl:gap-[26px] lg:gap-[20px] gap-[13px] overflow-hidden shrink-0">
+              <p className="shrink-0">Henri Matisse</p>
+              <p className="shrink-0">Michelangelo Merisi da Caravaggio</p>
+              <p className="shrink-0">Tiziano Vecellio</p>
+              <p className="shrink-0">Rembrandt Harmenszoon van Rijn</p>
             </li>
           </ul>
-          <p>Total Locked Value</p>
-          <p>100,000,000 USD</p>
-          <p>Explore Artworks</p>
+          <div className="content absolute w-full text-center z-[1] left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]">
+            <p className="font-[600] font-[PoppinsRegular] 2xl:text-[28px] 2xl:leading-[33px] lg:text-[21px] lg:leading-[25px] text-[14px] leading-[16px]">
+              Total Locked Value
+            </p>
+            <p className="font-[NewEddy] 2xl:text-[157px] 2xl:leading-[184px] 2xl:tracking-[12px] lg:text-[118px] lg:leading-[138px] lg:tracking-[9px] text-[40px] leading-[47px] tracking-[3px]">
+              100,000,000 USD
+            </p>
+            <p className="font-[Lato] inline-block 2xl:px-[40px] 2xl:py-[22px] lg:px-[30px] lg:py-[17px] px-[30px] py-[16px] bg-[#E4FF1A]  font-[400] 2xl:text-[18px] 2xl:leading-[22px] lg:text-[14px] lg:leading-[16px] text-[14px] rounded-[978px] leading-[16px]">
+              Explore Artworks
+            </p>
+          </div>
         </section>
-        <section className="secured w-full">
-          <p>YOUR INVESTMENTS ARE SECURED WITH US</p>
-          <ul>
+        <section className="secured w-full flex flex-col items-start justify-start 2xl:px-[80px] lg:px-[60px] px-[20px] 2xl:pt-[160px] lg:pt-[120px] pt-[40px] 2xl:pb-[220px] lg:pb-[165px] pb-[70px]">
+          <p className="font-[NewEddy] tracking-[1px] 2xl:text-[75px] 2xl:leading-[88px] lg:text-[56px] lg:leading-[66px] text-[29px] leading-[34px]">
+            YOUR INVESTMENTS
+          </p>
+          <p className="font-[NewEddy] tracking-[1px] 2xl:text-[75px] 2xl:leading-[88px] lg:text-[56px] lg:leading-[66px] text-[29px] leading-[34px]">
+            ARE SECURED WITH US
+          </p>
+          <ul className="flex lg:flex-row flex-col lg:gap-0 gap-[48px] lg:items-center items-start lg:justify-end justify-start 2xl:mt-[120px] lg:mt-[90px] mt-[60px]">
             <li>
-              <div className="pic">
+              <div className="pic 2xl:w-[278px] lg:w-[209px] w-[204px]">
                 <img src={securedA} />
               </div>
-              <p>Expert Authentication</p>
-              <p>
+              <p className="font-[Lato] font-[400] 2xl:mt-[48px] lg:mt-[36px] mt-[24px] 2xl:text-[24px] 2xl:leading-[28px] lg:text-[18px] lg:leading-[21px] text-[16px] leading-[19px] ">
+                Expert Authentication
+              </p>
+              <p className="font-[300] font-[PoppinsLight] 2xl:mt-[24px] lg:mt-[18px] mt-[12px] 2xl:text-[14px] 2xl:leading-[22px] lg:text-[11px] lg:leading-[17px] text-[10px] leading-[16px]">
                 We collaborates with renowned appraisers from GurrJohns(or other established appraisal firms)to
                 meticulously verify artwork authenticity,condition,and provenance,with its proof of appraisal embedded
                 directly within each token
               </p>
             </li>
             <li>
-              <div className="pic">
+              <div className="pic w-[45px]">
                 <img src={securedB} />
               </div>
-              <p>Comprehensive Insurance</p>
-              <p>
+              <p className="font-[Lato] font-[400] 2xl:mt-[48px] lg:mt-[36px] mt-[24px] 2xl:text-[24px] 2xl:leading-[28px] lg:text-[18px] lg:leading-[21px] text-[16px] leading-[19px] ">
+                Comprehensive Insurance
+              </p>
+              <p className="font-[300] font-[PoppinsLight] 2xl:mt-[24px] lg:mt-[18px] mt-[12px] 2xl:text-[14px] 2xl:leading-[22px] lg:text-[11px] lg:leading-[17px] text-[10px] leading-[16px]">
                 We partner with a leading art insurance company to provide tailored coverage against theft damage,and
                 loss during transportation,storage and loans
               </p>
             </li>
             <li>
-              <div className="pic">
+              <div className="pic 2xl:w-[184px] lg:w-[138px] w-[135px]">
                 <img src={securedC} />
               </div>
-              <p>Secure Transportation & Storage</p>
-              <p>
+              <p className="font-[Lato] font-[400] 2xl:mt-[48px] lg:mt-[36px] mt-[24px] 2xl:text-[24px] 2xl:leading-[28px] lg:text-[18px] lg:leading-[21px] text-[16px] leading-[19px] ">
+                Secure Transportation & Storage
+              </p>
+              <p className="font-[300] font-[PoppinsLight] 2xl:mt-[24px] lg:mt-[18px] mt-[12px] 2xl:text-[14px] 2xl:leading-[22px] lg:text-[11px] lg:leading-[17px] text-[10px] leading-[16px]">
                 We partner with trusted companies like Momart and DIETL International,to ensure secure transportation of
                 the artwork from your location to our state-of-the-art storage facility equipped with advanced security
                 systems and climate control to guarantee its preservation.
@@ -411,13 +475,26 @@ const Home: FC = () => {
           </ul>
         </section>
       </main>
-      <footer className="w-full">
-        <p className="title">READY TO OWN YOUR PIECE OF HISTORY?</p>
-        <form>
-          <input type="text" placeholder="Johndoe@gmail.com" />
-          <button type="submit">submit</button>
+      <footer className="w-full bg-[#9c9c9c] text-[#FFFFFF] flex flex-col items-start justify-start 2xl:px-[80px] lg:px-[60px] px-[20px] 2xl:pt-[102px] lg:pt-[77px] pt-[50px] 2xl:pb-[126px] lg:pb-[95px] pb-[36px]">
+        <p className="title font-[NewEddy] 2xl:text-[58px] 2xl:leading-[68px] lg:text-[44px] lg:leading-[51px] text-[29px] leading-[34px] tracking-[1px]">
+          READY TO OWN YOUR PIECE OF HISTORY?
+        </p>
+        <form className="2xl:mt-[50px] relative lg:mt-[38px] mt-[41px]">
+          <input
+            className="border-white bg-[#9c9c9c] font-[PoppinsRegular] font-[400] 2xl:text-[24px] 2xl:leading-[28px] lg:text-[18px] lg:leading-[21px] text-[12px] leading-[14px] 2xl:w-[615px] lg:w-[461px] w-[308px] border rounded-[30px] 2xl:py-[22px] lg:py-[17px] py-[11px] 2xl:pl-[45px] lg:pl-[34px] pl-[23px]"
+            type="text"
+            placeholder="Johndoe@gmail.com"
+          />
+          <button
+            className="absolute text-[#000000] bg-[#E4FF1A] rounded-[30px] 2xl:px-[45px] lg:px-[34px] px-[22px] 2xl:py-[21px] lg:py-[16px] py-[10px] 2xl:text-[18px] 2xl:leading-[22px] lg:text-[14px] lg:leading-[16px] text-[9px] leading-[11px]  font-[400] font-[Lato] right-[4px] top-[50%] translate-y-[-50%]"
+            type="submit"
+          >
+            Submit
+          </button>
         </form>
-        <p className="alert">Join the waitlist & Get Informed when New Artworks are Avaliable!</p>
+        <p className="alert font-[PoppinsRegular] font-[400] 2xl:text-[16px] 2xl:leading-[19px] lg:text-[12px] lg:leading-[14px] text-[12px] leading-[14px]  2xl:mt-[22px] lg:mt-[17px] mt-[11px]">
+          Join the waitlist & Get Informed when New Artworks are Avaliable!
+        </p>
       </footer>
     </div>
   )

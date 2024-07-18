@@ -11,6 +11,25 @@ body,
   height: auto;
   user-select: none;
 }
+input {
+  outline: none;
+}
+input::placeholder {
+  color: white; /* 设置颜色为白色 */
+  opacity: 0.3; /* 可选：调整透明度，确保颜色清晰可见 */
+}
+input::-webkit-input-placeholder {
+  color: white; /* Chrome/Opera/Safari */
+}
+input::-moz-placeholder {
+  color: white; /* Firefox 19+ */
+}
+input:-ms-input-placeholder {
+  color: white; /* IE 10+ */
+}
+input:-moz-placeholder {
+  color: white; /* Firefox 18- */
+}
 @font-face {
   font-family: 'NewEddy';
   src: url(@/assets/fonts/NewEddy-Display.ttf) format('truetype');
