@@ -1,6 +1,7 @@
 import React, { FC, useEffect, useRef, useState } from 'react'
 import './index.scss'
 import logo from '@/assets/images/logo.png'
+import mobileLogo from '@/assets/images/mobile-logo.png'
 // seciton-secured
 import securedA from '@/assets/images/secured/secured-a.png'
 import securedB from '@/assets/images/secured/secured-b.png'
@@ -79,7 +80,7 @@ const Home: FC = () => {
         </div>
         {/* mobile */}
         <div
-          className={`fixed inset-y-0 right-0 z-50 w-full bg-white overflow-y-auto py-[30px] sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 lg:hidden ${
+          className={`fixed inset-y-0 right-0 z-50 w-full bg-white overflow-y-auto py-[30px] sm:max-w-[40%] sm:ring-1 sm:ring-gray-900/10 lg:hidden ${
             openMenu ? 'block' : 'hidden'
           }`}
           role="dialog"
@@ -87,12 +88,12 @@ const Home: FC = () => {
         >
           <div className="flex items-center justify-between  px-[20px]">
             <a href="#">
-              <img className="lg:w-[223px] lg:h-[43px] w-[145px] h-[28px]" src={logo} alt="Arttoo" />
+              <img className="lg:w-[223px] lg:h-[43px] w-[145px] h-[28px]" src={mobileLogo} alt="Arttoo" />
             </a>
             <button type="button" className="text-gray-700" onClick={() => setOpenMenu(false)}>
               <span className="sr-only">Close menu</span>
               <svg
-                className="w-[28px] h-[28px] text-[#9c9c9c]"
+                className="w-[28px] h-[28px] text-[#000000]"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
@@ -103,28 +104,25 @@ const Home: FC = () => {
               </svg>
             </button>
           </div>
-          <div className="mt-[30px] px-[20px] flow-root">
-            <a
-              href="#"
-              className="font-[PoppinsMedium] font-[500] py-[10px] leading-[21px] text-[18px] block leading-[21px] text-[#9c9c9c]"
-            >
+          <div className="mt-[48px] px-[20px] flow-root">
+            <a href="#" className="font-[PoppinsMedium] font-[400]  leading-[38px] text-[32px] block  text-[#000000]">
               ARTWORKS
             </a>
             <a
               href="#"
-              className="font-[PoppinsMedium] font-[500] py-[10px] leading-[21px] text-[18px] block leading-[21px] text-[#9c9c9c]"
+              className="font-[PoppinsMedium] font-[400] mt-[40px] leading-[38px] text-[32px] block  text-[#000000]"
             >
               LEARN
             </a>
             <a
               href="#"
-              className="font-[PoppinsMedium] font-[500] py-[10px] leading-[21px] text-[18px] block leading-[21px] text-[#9c9c9c]"
+              className="font-[PoppinsMedium] font-[400] mt-[40px] leading-[38px] text-[32px] block  text-[#000000]"
             >
               ABOUT
             </a>
             <a
               href="#"
-              className="font-[PoppinsMedium] font-[500] py-[10px] leading-[21px] text-[18px] block leading-[21px] text-[#9c9c9c]"
+              className="font-[PoppinsMedium] mt-[40px] font-[400] leading-[38px] text-[32px] block  text-[#000000]"
             >
               CONTACT US
             </a>
