@@ -40,6 +40,8 @@ import aboutE from '@/assets/images/about/about-e.png'
 import aboutF from '@/assets/images/about/about-f.png'
 import aboutG from '@/assets/images/about/about-g.png'
 import aboutH from '@/assets/images/about/about-h.png'
+// section-value
+import forbes from '@/assets/images/value/forbes.png'
 const Home: FC = () => {
   const [openMenu, setOpenMenu] = useState(false)
   return (
@@ -131,10 +133,10 @@ const Home: FC = () => {
       </header>
       <main className="w-full">
         <section className="banner flex w-full flex-col items-start justify-start 2xl:pt-[123px] lg:pt-[103px] pt-[58px] pb-[100px] 2xl:pb-[327px] lg:pb-[245px] 2xl:px-[80px] lg:px-[60px] px-[20px] bg-[#9c9c9c]">
-          <p className="font-[NewEddy] text-[32px] leading-[38px] tracking-[2px] lg:tracking-[10px] 2xl:text-[132px] 2xl:leading[155px] lg:text-[99px] lg:leading-[116px] text-[#FFFFFF] lg:pt-[77px] 2xl:pt-[103px] pt-[112px]">
+          <p className="font-[NewEddy] text-[32px] leading-[38px] tracking-[2px] lg:tracking-[10px] 2xl:text-[132px] 2xl:leading-[155px] lg:text-[99px] lg:leading-[116px] text-[#FFFFFF] lg:pt-[77px] 2xl:pt-[103px] pt-[112px]">
             OWN A PIECE OF
           </p>
-          <p className="font-[NewEddy] text-[32px] leading-[38px] tracking-[2px] lg:tracking-[10px] 2xl:text-[132px] 2xl:leading[155px] lg:text-[99px] lg:leading-[116px] text-[#FFFFFF]">
+          <p className="font-[NewEddy] text-[32px] leading-[38px] tracking-[2px] lg:tracking-[10px] 2xl:text-[132px] 2xl:leading-[155px] lg:text-[99px] lg:leading-[116px] text-[#FFFFFF]">
             HISTORY WITH ARTTOO
           </p>
           <p className="font-[PoppinsRegular] font-[400] text-[12px] leading-[14px] lg:text-[16px] lg:leading-[19px] pt-[28px] lg:pt-[19px] text-[#FFFFFF]">
@@ -145,10 +147,10 @@ const Home: FC = () => {
           </p>
         </section>
         <section className="about flex w-full flex-col items-start justify-start px-[20px] lg:px-[60px] 2xl:px-[80px] 2xl:pt-[180px] lg:pt-[135px] pt-[90px] 2xl:pb-[309px] lg:pb-[232px] pb-[90px]">
-          <p className="2xl:pl-[233px] lg:pl-[100px] pl-[29px] font-[NewEddy] font-[500] text-[18px] leading-[21px] lg:text-[56px] lg:leading-[66px] 2xl:text-[75px] 2xl:leading-[88px]">
+          <p className="2xl:pl-[233px] lg:pl-[100px] pl-[29px] font-[NewEddy] font-[500] text-[18px] leading-[21px] lg:text-[40px] lg:leading-[48px] 2xl:text-[75px] 2xl:leading-[88px]">
             ART IS THE VISUAL PROOF OF HISTORY
           </p>
-          <p className="font-[500] text-[18px] font-[NewEddy] leading-[21px] lg:text-[56px] lg:leading-[66px] 2xl:text-[75px] 2xl:leading-[88px]">
+          <p className="font-[500] text-[18px] font-[NewEddy] leading-[21px] lg:text-[40px] lg:leading-[48px] 2xl:text-[75px] 2xl:leading-[88px]">
             CONSENSUS MECHANISM FOR HUMANITY
           </p>
           <div className="content w-full lg:pt-[27px] pt-[16px] flex lg:flex-row lg:gap-[100px] flex-col lg:items-center items-start justify-center">
@@ -184,35 +186,35 @@ const Home: FC = () => {
                 <img className="w-[28px] h-[195px] lg:w-[56px] lg:h-[389px] 2xl:w-[75px] 2xl:h-[518px]" src={aboutH} />
               </li>
             </ul>
-            <div className="floor-1 flex-1 mt-[48px] lg:mt-[0] flex flex-col items-center justify-center">
-              <p className="inline-block font-[NewEddy] 2xl:text-[40px] 2xl:leading-[47px] lg:text-[30px] lg:leading-[35px] text-[20px] leading-[23px]">
+            <div className="floor-1 flex-1 mt-[48px] lg:mt-[0] flex flex-col items-start justify-center">
+              <p className="font-[NewEddy] 2xl:text-[40px] 2xl:leading-[47px] lg:text-[20px] lg:leading-[24px] text-[20px] leading-[23px]">
                 Arttoo isn&apos;t just about returns
               </p>
-              <p className="font-[300] mt-[12px] 2xl:text-[16px] 2xl:leading-[26px] lg:text-[12px] lg:leading-[19px] text-[10px] leading-[16px] inline-block font-[PoppinsRegular]">
+              <p className="font-[300] mt-[32px] 2xl:text-[16px] 2xl:leading-[26px] lg:text-[12px] lg:leading-[19px] text-[10px] leading-[16px] inline-block font-[PoppinsRegular]">
                 It&apos;s about unlocking a world of possibilities. Become part of a vibrant art community, connect with
                 a timeless piece of culture, and watch your investment grow alongside your passion.
               </p>
-              <p className="font-[300] mt-[12px] 2xl:text-[16px] 2xl:leading-[26px] lg:text-[12px] lg:leading-[19px] text-[10px] leading-[16px] font-[PoppinsRegular]">
+              <p className="font-[300] mt-[32px] 2xl:text-[16px] 2xl:leading-[26px] lg:text-[12px] lg:leading-[19px] text-[10px] leading-[16px] font-[PoppinsRegular]">
                 Start investing in fractional shares of legacy masterpieces via a collection curated by
                 ex-Sotheby&apos;s and Christie&apos;s specialists, with no auction house markups, no gallery markups, no
                 hidden true-up fees.
               </p>
-              <p className="font-[300] mt-[16px] 2xl:text-[16px] 2xl:leading-[26px] lg:text-[12px] lg:leading-[19px] text-[10px] leading-[16px] font-[PoppinsRegular]">
+              <p className="font-[300] mt-[32px] 2xl:text-[16px] 2xl:leading-[26px] lg:text-[12px] lg:leading-[19px] text-[10px] leading-[16px] font-[PoppinsRegular]">
                 Also, no need to track provenance anymore, all transactions are secure, transparent, and regulated
                 through the beauty of blockchain technologies.
               </p>
             </div>
           </div>
         </section>
-        <section className="data flex lg:flex-row flex-col items-start justify-start 2xl:mx-[40px] lg:mx-[30px] mx-[10px] 2xl:px-[40px] lg:px-[30px] px-[10px] 2xl:pt-[71px] lg:pt-[53px] pt-[20px] 2xl:pb-[180px] lg:pb-[135px] pb-[48px] bg-[#eeeeee]">
+        <section className="data flex lg:flex-row flex-col lg:gap-[40px] items-start justify-start 2xl:mx-[40px] lg:mx-[30px] mx-[10px] 2xl:px-[40px] lg:px-[30px] px-[10px] 2xl:pt-[71px] lg:pt-[53px] pt-[20px] 2xl:pb-[180px] lg:pb-[135px] pb-[48px] bg-[#eeeeee]">
           <div className="left w-full flex-1 flex flex-col items-start justify-start">
             <img src={dataA} className="lg:max-w-[226px] max-w-[85px] h-[auto]" />
-            <ul className="self-start 2xl:pt-[92px] lg:pt-[69px] pt-[24px] lg:pl-0 pl-[30px] lg:self-end">
+            <ul className="self-start 2xl:pt-[92px] lg:pt-[69px] pt-[24px] lg:pl-[15%] pl-[30px] lg:self-start">
               <li>
                 <p className="font-[NewEddy] 2xl:text-[60px] 2xl:leading-[70px] lg:text-[45px] lg:leading-[53px] text-[20px] leading-[23px]">
                   $11.8 BILLION
                 </p>
-                <p className="font-[300] font-[PoppinsRegular] 2xl:text-[16px] 2xl:leading-[26px] lg:text-[12px] lg:leading-[19px] text-[10px] leading-[16px]">
+                <p className="font-[300] font-[PoppinsLight] 2xl:text-[16px] 2xl:leading-[26px] lg:text-[12px] lg:leading-[19px] text-[10px] leading-[16px]">
                   in online-only sales volume,doubled since 2019
                 </p>
               </li>
@@ -220,7 +222,7 @@ const Home: FC = () => {
                 <p className="font-[NewEddy] 2xl:text-[60px] 2xl:leading-[70px] lg:text-[45px] lg:leading-[53px] text-[20px] leading-[23px]">
                   14.9% CAGR
                 </p>
-                <p className="font-[300] font-[PoppinsRegular] 2xl:text-[16px] 2xl:leading-[26px] lg:text-[12px] lg:leading-[19px] text-[10px] leading-[16px]">
+                <p className="font-[300] font-[PoppinsLight] 2xl:text-[16px] 2xl:leading-[26px] lg:text-[12px] lg:leading-[19px] text-[10px] leading-[16px]">
                   between 2009-2022 on Ultra-High End Art Index
                 </p>
               </li>
@@ -228,7 +230,7 @@ const Home: FC = () => {
                 <p className="font-[NewEddy] 2xl:text-[60px] 2xl:leading-[70px] lg:text-[45px] lg:leading-[53px] text-[20px] leading-[23px]">
                   ~19% AVERAGE
                 </p>
-                <p className="font-[300] font-[PoppinsRegular] 2xl:text-[16px] 2xl:leading-[26px] lg:text-[12px] lg:leading-[19px] text-[10px] leading-[16px]">
+                <p className="font-[300] font-[PoppinsLight] 2xl:text-[16px] 2xl:leading-[26px] lg:text-[12px] lg:leading-[19px] text-[10px] leading-[16px]">
                   allocation in art for HNW collectors, with ~30% for collectors &gt;$50m in net worth
                 </p>
               </li>
@@ -241,7 +243,7 @@ const Home: FC = () => {
             />
             <div className="desc">
               <p className="font-[PoppinsRegular] mt-[17px] lg:mt-0 font-[300] lg:text-[20px] text-[10px]">Forbes</p>
-              <p className="font-[300] font-[PoppinsRegular] lg:pt-[19px] pt-[10px] lg:text-[16px] lg:leading-[26px] text-[8px] leading-[13px]">
+              <p className="font-[300] font-[PoppinsLight] lg:pt-[19px] pt-[10px] lg:text-[16px] lg:leading-[26px] text-[8px] leading-[13px]">
                 Monet Nymphéas sold at
               </p>
               <p className="font-[NewEddy] lg:text-[32px] lg:leading-[38px] text-[16px] leading-[19px]">$44.6M</p>
@@ -252,10 +254,12 @@ const Home: FC = () => {
           <p className="font-[PoppinsRegular] lg:text-[22px] lg:leading-[26px] text-[12px] leading-[14px]">
             Own a Piece of History in 3 Simple Steps
           </p>
-          <p className="font-[PoppinsRegular] lg:text-[16px] font-[400] lg:leading-[19px] text-[12px] leading-[14px] 2xl:pt-[117px] lg:pt-[88px] pt-[45px]">
-            001<span className="text-[#AAAAAA]"> / 003</span>
+          <p className="font-[NewEddy] lg:text-[100px] lg:leading-[117px] text-[38px] leading-[44px]">
+            <p className="font-[PoppinsRegular] lg:text-[16px] font-[400] lg:leading-[19px] text-[12px] leading-[14px] 2xl:pt-[117px] lg:pt-[88px] pt-[45px]">
+              001<span className="text-[#AAAAAA]"> / 003</span>
+            </p>
+            <p className="lg:tracking-[8px] tracking-[3px]">EXPLORE</p>
           </p>
-          <p className="font-[NewEddy] lg:text-[100px] lg:leading-[117px] text-[38px] leading-[44px]">EXPLORE</p>
           <p className="lg:text-[24px] lg:leading-[28px] text-[12px] leading-[14px] font-[PoppinsRegular] font-[400] 2xl:pt-[25px] lg:pt-[19px] pt-[10px] 2xl:px-[40px] text-center lg:px-[30px] px-[10px]">
             Browse a selection of iconic masterpieces carefully handpicked by our expert curators from Sotheby&apos;s
             and Christie&apos;s.
@@ -287,13 +291,13 @@ const Home: FC = () => {
               <img className="w-[142px]  h-[auto]" src={pixI} />
             </div>
             <div className="desc absolute right-0 bottom-0 z-[-10]">
-              <p className="font-[PoppinsRegular] font-[400] lg:text-[12px] lg:leading-[14px] text-[9px] leading-[11px]">
+              <p className="font-[PoppinsRegular] font-[400] 2xl:text-[18px] 2xl:leading-[21px] lg:text-[14px] lg:leading-[16px] text-[9px] leading-[11px]">
                 Nympheas
               </p>
-              <p className="font-[PoppinsRegular] font-[400] lg:text-[12px] lg:leading-[14px] text-[9px] leading-[11px]">
+              <p className="font-[PoppinsRegular] font-[400] 2xl:text-[18px] 2xl:leading-[21px] lg:text-[14px] lg:leading-[16px] text-[9px] leading-[11px]">
                 Claude Monet
               </p>
-              <p className="font-[PoppinsRegular] font-[400] lg:text-[12px] lg:leading-[14px] text-[9px] leading-[11px]">
+              <p className="font-[PoppinsRegular] font-[400] 2xl:text-[18px] 2xl:leading-[21px] lg:text-[14px] lg:leading-[16px] text-[9px] leading-[11px]">
                 33,850,000 USD
               </p>
             </div>
@@ -302,7 +306,9 @@ const Home: FC = () => {
             <p className="font-[400] font-[PoppinsRegular] lg:text-[16px] lg:leading-[19px] text-[12px] leading-[14px]">
               002<span className="text-[#AAAAAA]"> / 003</span>
             </p>
-            <p className="font-[NewEddy] lg:text-[75px] lg:leading-[88px] text-[38px] leading-[44px]">INVEST</p>
+            <p className="font-[NewEddy] lg:tracking-[8px] tracking-[3px] lg:text-[75px] lg:leading-[88px] text-[38px] leading-[44px]">
+              INVEST
+            </p>
             <p className="font-[PoppinsRegular] lg:mt-[20px] mt-[10px] lg:text-[18px] lg:leading-[21px] text-[12px] leading-[14px] mb-[32px]">
               Invest in a fraction of masterpieces for a fraction of its total cost via our platform
             </p>
@@ -313,8 +319,10 @@ const Home: FC = () => {
             <p className="font-[400] font-[PoppinsRegular] text-[12px] leading-[14px] lg:text-[16px] lg:leading-[19px]">
               003<span className="text-[#AAAAAA]"> / 003</span>
             </p>
-            <p className="font-[NewEddy] lg:text-[100px] lg:leading-[117px] text-[38px] leading-[44px]">EARN</p>
-            <p className="font-[400] font-[PoppinsRegular] lg:text-[18px] lg:leading-[21px] text-[12px] leading-[14px]">
+            <p className="font-[NewEddy] lg:tracking-[8px] tracking-[3px] lg:text-[100px] lg:leading-[117px] text-[38px] leading-[44px]">
+              EARN
+            </p>
+            <p className="font-[400] font-[PoppinsRegular] 2xl:text-[24px] 2xl:leading-[28px] lg:text-[18px] lg:leading-[21px] text-[12px] leading-[14px]">
               Watch your investment grow in value through exhibitions of museums and galleries,NFT merchandise and so
               much more.
             </p>
@@ -431,8 +439,8 @@ const Home: FC = () => {
           <p className="font-[NewEddy] tracking-[1px] 2xl:text-[75px] 2xl:leading-[88px] lg:text-[56px] lg:leading-[66px] text-[29px] leading-[34px]">
             ARE SECURED WITH US
           </p>
-          <ul className="flex lg:flex-row flex-col lg:gap-0 gap-[48px] lg:items-center items-start lg:justify-end justify-start 2xl:mt-[120px] lg:mt-[90px] mt-[60px]">
-            <li>
+          <ul className="flex lg:flex-row lg:gap-[10px] flex-col lg:gap-0 gap-[48px] items-start justify-start 2xl:mt-[120px] lg:mt-[90px] mt-[60px]">
+            <li className="flex-1">
               <div className="pic 2xl:w-[278px] lg:w-[209px] w-[204px]">
                 <img src={securedA} />
               </div>
@@ -445,11 +453,11 @@ const Home: FC = () => {
                 directly within each token
               </p>
             </li>
-            <li>
+            <li className="flex-1">
               <div className="pic w-[45px]">
                 <img src={securedB} />
               </div>
-              <p className="font-[Lato] font-[400] 2xl:mt-[48px] lg:mt-[36px] mt-[24px] 2xl:text-[24px] 2xl:leading-[28px] lg:text-[18px] lg:leading-[21px] text-[16px] leading-[19px] ">
+              <p className="font-[Lato] font-[400] 2xl:mt-[63px] lg:mt-[36px] mt-[24px] 2xl:text-[24px] 2xl:leading-[28px] lg:text-[18px] lg:leading-[21px] text-[16px] leading-[19px] ">
                 Comprehensive Insurance
               </p>
               <p className="font-[300] font-[PoppinsLight] 2xl:mt-[24px] lg:mt-[18px] mt-[12px] 2xl:text-[14px] 2xl:leading-[22px] lg:text-[11px] lg:leading-[17px] text-[10px] leading-[16px]">
@@ -457,7 +465,7 @@ const Home: FC = () => {
                 loss during transportation,storage and loans
               </p>
             </li>
-            <li>
+            <li className="flex-1">
               <div className="pic 2xl:w-[184px] lg:w-[138px] w-[135px]">
                 <img src={securedC} />
               </div>
