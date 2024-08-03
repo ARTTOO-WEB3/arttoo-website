@@ -8,9 +8,9 @@ import securedB from '@/assets/images/secured/secured-b.png'
 import securedC from '@/assets/images/secured/secured-c.png'
 // section-earn
 import roundA from '@/assets/images/earn/round-a.png'
-import roundB from '@/assets/images/earn/round-b.png'
-import startA from '@/assets/images/earn/start-a.png'
-import startB from '@/assets/images/earn/start-b.png'
+import starA from '@/assets/images/earn/star-a.png'
+import starB from '@/assets/images/earn/star-b.png'
+import starC from '@/assets/images/earn/star-c.png'
 import doorA from '@/assets/images/earn/door-a.png'
 import doorB from '@/assets/images/earn/door-b.png'
 // section-invest
@@ -30,6 +30,7 @@ import picC from '@/assets/images/explore/pic-c.png'
 import picD from '@/assets/images/explore/pic-d.png'
 // section-data
 import dataA from '@/assets/images/data/data-a.png'
+import forbes from '@/assets/images/data/forbes.png'
 import movePic from '@/assets/images/move-pic.png'
 // section-about
 import aboutA from '@/assets/images/about/about-a.png'
@@ -40,8 +41,6 @@ import aboutE from '@/assets/images/about/about-e.png'
 import aboutF from '@/assets/images/about/about-f.png'
 import aboutG from '@/assets/images/about/about-g.png'
 import aboutH from '@/assets/images/about/about-h.png'
-// section-value
-import forbes from '@/assets/images/value/forbes.png'
 const Home: FC = () => {
   const [openMenu, setOpenMenu] = useState(false)
   return (
@@ -206,7 +205,7 @@ const Home: FC = () => {
             </div>
           </div>
         </section>
-        <section className="data flex lg:flex-row flex-col lg:gap-[40px] items-start justify-start 2xl:mx-[40px] lg:mx-[30px] mx-[10px] 2xl:px-[40px] lg:px-[30px] px-[10px] 2xl:pt-[71px] lg:pt-[53px] pt-[20px] 2xl:pb-[180px] lg:pb-[135px] pb-[48px] bg-[#eeeeee]">
+        <section className="data flex lg:flex-row flex-col lg:gap-[40px] items-center justify-start 2xl:mx-[40px] lg:mx-[30px] mx-[10px] 2xl:px-[40px] lg:px-[30px] px-[10px] 2xl:pt-[71px] lg:pt-[53px] pt-[20px] 2xl:pb-[180px] lg:pb-[135px] pb-[48px] bg-[#eeeeee]">
           <div className="left w-full flex-1 flex flex-col items-start justify-start">
             <img src={dataA} className="lg:max-w-[226px] max-w-[85px] h-[auto]" />
             <ul className="self-start 2xl:pt-[92px] lg:pt-[69px] pt-[24px] lg:pl-[15%] pl-[30px] lg:self-start">
@@ -238,11 +237,11 @@ const Home: FC = () => {
           </div>
           <div className="right w-full flex-1 flex lg:flex-row lg:gap-[30px] flex-col lg:items-end justify-start lg:pl-0 pl-[30px]">
             <img
-              className="lg:mt-[-137px] mt-[40px] 2xl:max-w-[552px] lg:max-w-[414px] max-w-[275px] h-[auto]"
+              className="mt-[40px] lg:mt-0 2xl:max-w-[408px] lg:max-w-[408px] max-w-[275px] h-[auto]"
               src={movePic}
             />
             <div className="desc">
-              <p className="font-[PoppinsRegular] mt-[17px] lg:mt-0 font-[300] lg:text-[20px] text-[10px]">Forbes</p>
+              <img className="lg:mt-0 mt-[18px]" src={forbes} />
               <p className="font-[300] font-[PoppinsLight] lg:pt-[19px] pt-[10px] lg:text-[16px] lg:leading-[26px] text-[8px] leading-[13px]">
                 Monet Nymphéas sold at
               </p>
@@ -269,7 +268,7 @@ const Home: FC = () => {
               <img src={picA} />
             </li>
             <li className="lg:max-w-[318px]	 shrink-0 2xl:max-w-[424px] lg:h-[auto] max-w-[159px]">
-              <img src={picB} />
+              <img src={movePic} />
               <img className="2xl:mt-[113px] lg:mt-[85px] mt-[29px]" src={picC} />
             </li>
             <li className="lg:max-w-[318px]  shrink-0 2xl:max-w-[424px] lg:h-[auto] max-w-[159px]">
@@ -294,10 +293,10 @@ const Home: FC = () => {
               <p className="font-[PoppinsRegular] font-[400] 2xl:text-[18px] 2xl:leading-[21px] lg:text-[14px] lg:leading-[16px] text-[9px] leading-[11px]">
                 Nympheas
               </p>
-              <p className="font-[PoppinsRegular] font-[400] 2xl:text-[18px] 2xl:leading-[21px] lg:text-[14px] lg:leading-[16px] text-[9px] leading-[11px]">
+              <p className="font-[PoppinsRegular] mt-[4px] font-[400] 2xl:text-[18px] 2xl:leading-[21px] lg:text-[14px] lg:leading-[16px] text-[9px] leading-[11px]">
                 Claude Monet
               </p>
-              <p className="font-[PoppinsRegular] font-[400] 2xl:text-[18px] 2xl:leading-[21px] lg:text-[14px] lg:leading-[16px] text-[9px] leading-[11px]">
+              <p className="font-[PoppinsRegular] mt-[4px] font-[400] 2xl:text-[18px] 2xl:leading-[21px] lg:text-[14px] lg:leading-[16px] text-[9px] leading-[11px]">
                 33,850,000 USD
               </p>
             </div>
@@ -314,7 +313,7 @@ const Home: FC = () => {
             </p>
           </div>
         </section>
-        <section className="earn flex lg:flex-row flex-col  items-center justify-start 2xl:px-[80px] lg:px-[60px] px-[20px] 2xl:pt-[200px] lg:pt-[150px] pt-[188px] 2xl:pb-[174px] lg:pb-[131px] pb-[141px]">
+        <section className="earn flex lg:flex-row flex-col items-center justify-start 2xl:px-[80px] lg:px-[60px] px-[20px] 2xl:pt-[200px] lg:pt-[150px] pt-[188px] 2xl:pb-[174px] lg:pb-[231px] pb-[141px]">
           <div className="left flex-1 w-full">
             <p className="font-[400] font-[PoppinsRegular] text-[12px] leading-[14px] lg:text-[16px] lg:leading-[19px]">
               003<span className="text-[#AAAAAA]"> / 003</span>
@@ -330,27 +329,24 @@ const Home: FC = () => {
           <div className="right mt-[120px] lg:mt-0 flex-1 w-full flex lg:justify-start items-center justify-center">
             <div className="relative">
               <img
-                className="absolute top-0 lg:left-[-150px] left-[-90px] 2xl:w-[171px] 2xl:w-[149px] lg:w-[112px] w-[70px] h-[auto]"
+                className="absolute bottom-[-20%] left-[-20%] 2xl:w-[122px] lg:w-[91px] w-[50px] h-[auto]"
                 src={roundA}
               />
+              <img className="absolute top-[0] left-[-20%] 2xl:w-[28px] lg:w-[28px] w-[11px] h-[auto]" src={starA} />
+              <img className="absolute top-[-20%] left-[0] 2xl:w-[122px] lg:w-[47px] w-[25px] h-[auto]" src={starC} />
               <img
-                className="absolute top-[41px] lg:right-[-100px] right-[-50px] 2xl:w-[91px] lg:w-[62px] w-[37px]"
-                src={roundB}
-              />
-              <img className="absolute top-[-70px] lg:left-[-80px] lg:w-[48px] w-[21px] h-[auto]" src={startA} />
-              <img
-                className="absolute top-[70px] lg:top-[120px] lg:right-[-125px] right-[-62px] lg:w-[52px] w-[21px] h-[auto]"
-                src={startB}
+                className="absolute top-[30%] right-[-30%] 2xl:w-[122px] lg:w-[47px] w-[25px] h-[auto]"
+                src={starB}
               />
               <img
-                className="absolute 2xl:right-[-107px] lg:right-[-47px] right-[-25px] z-[-2] lg:top-[-125px] top-[-51px] 2xl:w-[370px] lg:w-[278px] w-[150px] h-[auto]"
+                className="absolute right-[-15%] z-[-2] top-[-20%] 2xl:w-[370px] lg:w-[278px] w-[150px] h-[auto]"
                 src={doorA}
               />
               <img
-                className="absolute 2xl:bottom-[-62px] lg:bottom-[-47px] bottom-[-25px] 2xl:right-[-132px] lg:right-[-99px] right-[-54px]  z-[-1] 2xl:w-[229px] lg:w-[172px]  w-[94px] h-[auto]"
+                className="absolute bottom-[-25%] right-[-25%]  z-[-1] 2xl:w-[229px] lg:w-[172px]  w-[94px] h-[auto]"
                 src={doorB}
               />
-              <img className="2xl:w-[415px] lg:w-[311px] w-[169px] h-[auto]" src={movePic} />
+              <img className="2xl:w-[547px] lg:w-[410px] w-[221px] h-[auto]" src={movePic} />
             </div>
           </div>
         </section>
@@ -361,18 +357,23 @@ const Home: FC = () => {
               <p className="shrink-0">Michelangelo Merisi da Caravaggio</p>
               <p className="shrink-0">Tiziano Vecellio</p>
               <p className="shrink-0">Rembrandt Harmenszoon van Rijn</p>
+              <p className="shrink-0">Vincent Willem van Gogh</p>
             </li>
             <li className="flex items-center justify-start 2xl:gap-[26px] lg:gap-[20px] gap-[13px] overflow-hidden shrink-0">
               <p className="shrink-0">Vincent Willem van Gogh</p>
               <p className="shrink-0">Paul Cézanne</p>
               <p className="shrink-0">Johannes Vermeer</p>
               <p className="shrink-0">Rembrandt Harmenszoon van Rijn</p>
+              <p className="shrink-0">Vincent Willem van Gogh</p>
+              <p className="shrink-0">Filippino Lippi</p>
             </li>
             <li className="flex items-center justify-start 2xl:gap-[26px] lg:gap-[20px] gap-[13px] overflow-hidden shrink-0">
               <p className="shrink-0">Giotto di Bondone</p>
               <p className="shrink-0">Rembrandt Harmenszoon van Rijn</p>
               <p className="shrink-0">Jackson Pollock</p>
               <p className="shrink-0">Leonardo di ser Piero da Vinci</p>
+              <p className="shrink-0">Filippino Lippi</p>
+              <p className="shrink-0">Filippino Lippi</p>
             </li>
             <li className="flex items-center justify-start 2xl:gap-[26px] lg:gap-[20px] gap-[13px] overflow-hidden shrink-0">
               <p className="shrink-0">Tiziano Vecellio</p>
@@ -380,6 +381,8 @@ const Home: FC = () => {
               <p className="shrink-0">Édouard Manet</p>
               <p className="shrink-0">Raphael Sanzio</p>
               <p className="shrink-0">Edgar Degas</p>
+              <p className="shrink-0">Filippino Lippi</p>
+              <p className="shrink-0">Filippino Lippi</p>
             </li>
             <li className="flex items-center justify-start 2xl:gap-[26px] lg:gap-[20px] gap-[13px] overflow-hidden shrink-0">
               <p className="shrink-0">Raphael Sanzio</p>
@@ -387,6 +390,7 @@ const Home: FC = () => {
               <p className="shrink-0">Oscar-Claude Monet</p>
               <p className="shrink-0">Vincent Willem van Gogh</p>
               <p className="shrink-0">Rembrandt Harmenszoon van Rijn</p>
+              <p className="shrink-0">Filippino Lippi</p>
             </li>
             <li className="flex items-center justify-start 2xl:gap-[26px] lg:gap-[20px] gap-[13px] overflow-hidden shrink-0">
               <p className="shrink-0">Rembrandt Harmenszoon van Rijn</p>
@@ -394,17 +398,22 @@ const Home: FC = () => {
               <p className="shrink-0">Claude Monet</p>
               <p className="shrink-0">Gustav Klimt</p>
               <p className="shrink-0">Edgar Hilaire Germain de Gas</p>
+              <p className="shrink-0">Filippino Lippi</p>
             </li>
             <li className="flex items-center justify-start 2xl:gap-[26px] lg:gap-[20px] gap-[13px] overflow-hidden shrink-0">
               <p className="shrink-0">Pablo Ruiz Picasso</p>
               <p className="shrink-0">Leonardo di ser Piero da Vinci</p>
               <p className="shrink-0">Raffaello Sanzio da Urbino</p>
               <p className="shrink-0">Edgar Degas</p>
+              <p className="shrink-0">Filippino Lippi</p>
+              <p className="shrink-0">Rembrandt Harmenszoon van Rijn</p>
             </li>
             <li className="flex items-center justify-start 2xl:gap-[26px] lg:gap-[20px] gap-[13px] overflow-hidden shrink-0">
               <p className="shrink-0">Henri Matisse</p>
               <p className="shrink-0">Michelangelo Merisi da Caravaggio</p>
               <p className="shrink-0">Tiziano Vecellio</p>
+              <p className="shrink-0">Rembrandt Harmenszoon van Rijn</p>
+              <p className="shrink-0">Filippino Lippi</p>
               <p className="shrink-0">Rembrandt Harmenszoon van Rijn</p>
             </li>
             <li className="flex items-center justify-start 2xl:gap-[26px] lg:gap-[20px] gap-[13px] overflow-hidden shrink-0">
@@ -412,11 +421,15 @@ const Home: FC = () => {
               <p className="shrink-0">Rembrandt Harmenszoon van Rijn</p>
               <p className="shrink-0">Jackson Pollock</p>
               <p className="shrink-0">Leonardo di ser Piero da Vinci</p>
+              <p className="shrink-0">Filippino Lippi</p>
+              <p className="shrink-0">Rembrandt Harmenszoon van Rijn</p>
             </li>
             <li className="flex items-center justify-start 2xl:gap-[26px] lg:gap-[20px] gap-[13px] overflow-hidden shrink-0">
               <p className="shrink-0">Henri Matisse</p>
               <p className="shrink-0">Michelangelo Merisi da Caravaggio</p>
               <p className="shrink-0">Tiziano Vecellio</p>
+              <p className="shrink-0">Rembrandt Harmenszoon van Rijn</p>
+              <p className="shrink-0">Filippino Lippi</p>
               <p className="shrink-0">Rembrandt Harmenszoon van Rijn</p>
             </li>
           </ul>
@@ -487,12 +500,12 @@ const Home: FC = () => {
         </p>
         <form className="2xl:mt-[50px] relative lg:mt-[38px] mt-[41px]">
           <input
-            className="border-white bg-[#9c9c9c] font-[PoppinsRegular] font-[400] 2xl:text-[24px] 2xl:leading-[28px] lg:text-[18px] lg:leading-[21px] text-[12px] leading-[14px] 2xl:w-[615px] lg:w-[461px] w-[308px] border rounded-[30px] 2xl:py-[22px] lg:py-[17px] py-[11px] 2xl:pl-[45px] lg:pl-[34px] pl-[23px]"
+            className="border-white bg-[#9c9c9c] font-[PoppinsRegular] font-[400] 2xl:text-[24px] 2xl:leading-[28px] lg:text-[18px] lg:leading-[21px] text-[12px] leading-[14px] 2xl:w-[615px] lg:w-[461px] w-[308px] border rounded-[40px] 2xl:py-[22px] lg:py-[17px] py-[11px] 2xl:pl-[45px] lg:pl-[34px] pl-[23px]"
             type="text"
             placeholder="Johndoe@gmail.com"
           />
           <button
-            className="absolute text-[#000000] bg-[#E4FF1A] rounded-[30px] 2xl:px-[45px] lg:px-[34px] px-[22px] 2xl:py-[21px] lg:py-[16px] py-[10px] 2xl:text-[18px] 2xl:leading-[22px] lg:text-[14px] lg:leading-[16px] text-[9px] leading-[11px]  font-[400] font-[Lato] right-[4px] top-[50%] translate-y-[-50%]"
+            className="absolute text-[#000000] bg-[#E4FF1A] rounded-[32px] 2xl:px-[45px] lg:px-[34px] px-[22px] 2xl:py-[21px] lg:py-[16px] py-[10px] 2xl:text-[18px] 2xl:leading-[22px] lg:text-[14px] lg:leading-[16px] text-[9px] leading-[11px]  font-[400] font-[Lato] 2xl:right-[8px] lg:right-[6px] right-[4px] top-[50%] translate-y-[-50%]"
             type="submit"
           >
             Submit
