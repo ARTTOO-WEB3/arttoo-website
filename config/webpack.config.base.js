@@ -3,6 +3,7 @@ const fs = require('fs')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const env = process.env.NODE_ENV || 'development'
 const root = path.join(__dirname, '../')
 const srcPath = path.join(root, 'src')
@@ -21,7 +22,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(png|gif|jpg|jpeg|woff|ttf|eot)$/i,
+        test: /\.(png|gif|jpg|jpeg|woff|ttf|eot|mp4)$/i,
         type: 'asset',
         exclude: [path.resolve('src/svg')],
       },
@@ -50,6 +51,14 @@ module.exports = {
     ],
   },
   plugins: [
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, '../public'), // 源目录
+          to: path.resolve(__dirname, '../build'), // 目标目录
+        },
+      ],
+    }),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(env),

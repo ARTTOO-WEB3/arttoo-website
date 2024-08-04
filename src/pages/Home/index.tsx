@@ -1,5 +1,6 @@
 import React, { FC, useEffect, useRef, useState } from 'react'
 import './index.scss'
+import { PAGInit } from 'libpag'
 import logo from '@/assets/images/logo.png'
 import mobileLogo from '@/assets/images/mobile-logo.png'
 // seciton-secured
@@ -43,9 +44,25 @@ import aboutG from '@/assets/images/about/about-g.png'
 import aboutH from '@/assets/images/about/about-h.png'
 const Home: FC = () => {
   const [openMenu, setOpenMenu] = useState(false)
+  useEffect(() => {
+    PAGInit().then((PAG) => {
+      const url = './banner.pag'
+      fetch(url)
+        .then((response) => response.arrayBuffer())
+        .then(async (buffer) => {
+          const pagFile = await PAG.PAGFile.load(buffer)
+          const canvas: any = document.getElementById('pag')
+          const styleDeclaration = window.getComputedStyle(canvas, null)
+          // Create PAGView.
+          const pagView: any = await PAG.PAGView.init(pagFile, canvas, { useScale: false })
+          pagView.setRepeatCount(0)
+          await pagView.play()
+        })
+    })
+  }, [])
   return (
     <div className="homeContainer w-full">
-      <header className="fixed w-full flex justify-between items-center lg:pt-[60px] 2xl:pt-[80px] pt-[30px] 2xl:px-[80px] lg:px-[60px] px-[20px]">
+      <header className="fixed z-[10] w-full flex justify-between items-center lg:pt-[60px] 2xl:pt-[80px] pt-[30px] 2xl:px-[80px] lg:px-[60px] px-[20px]">
         <div className="logo lg:w-[223px] lg:h-[43px] w-[145px] h-[28px]">
           <img className="lg:w-[223px] lg:h-[43px] w-[145px] h-[28px]" src={logo} alt="Arttoo" />
         </div>
@@ -131,7 +148,7 @@ const Home: FC = () => {
         </div>
       </header>
       <main className="w-full">
-        <section className="banner flex w-full flex-col items-start justify-start 2xl:pt-[123px] lg:pt-[103px] pt-[58px] pb-[100px] 2xl:pb-[327px] lg:pb-[245px] 2xl:px-[80px] lg:px-[60px] px-[20px] bg-[#9c9c9c]">
+        <section className="banner relative flex w-full flex-col items-start justify-start 2xl:pt-[123px] lg:pt-[103px] pt-[58px] pb-[100px] 2xl:pb-[327px] lg:pb-[245px] 2xl:px-[80px] lg:px-[60px] px-[20px] bg-[#9c9c9c]">
           <p className="font-[NewEddy] text-[32px] leading-[38px] tracking-[2px] lg:tracking-[10px] 2xl:text-[132px] 2xl:leading-[155px] lg:text-[99px] lg:leading-[116px] text-[#FFFFFF] lg:pt-[77px] 2xl:pt-[103px] pt-[112px]">
             OWN A PIECE OF
           </p>
@@ -141,6 +158,9 @@ const Home: FC = () => {
           <p className="font-[PoppinsRegular] font-[400] text-[12px] leading-[14px] lg:text-[16px] lg:leading-[19px] pt-[28px] lg:pt-[19px] text-[#FFFFFF]">
             Invest in renowned masterpieces with just a fraction of its cost
           </p>
+          <div className="lg:absolute mt-[30px] lg:right-[0] lg:bottom-[0] canvasContainer 2xl:w-[1144px] 2xl:h-[646px] lg:w-[858px] lg:h-[484px] w-full h-[auto]">
+            <canvas id="pag"></canvas>
+          </div>
           <p className="font-[Lato] flex self-center lg:self-start  items-center justify-center lg:mt-[125px] mt-[35px] text-[14px] leading-[16px] lg:text-[18px] lg:leading-[21px] font-[400] text-[#000000] bg-[#E4FF1A] rounded-[978px] lg:px-[52px] lg:py-[22px] px-[38px] py-[16px]">
             LEARN MORE
           </p>
@@ -333,11 +353,8 @@ const Home: FC = () => {
                 src={roundA}
               />
               <img className="absolute top-[0] left-[-20%] 2xl:w-[28px] lg:w-[28px] w-[11px] h-[auto]" src={starA} />
-              <img className="absolute top-[-20%] left-[0] 2xl:w-[122px] lg:w-[47px] w-[25px] h-[auto]" src={starC} />
-              <img
-                className="absolute top-[30%] right-[-30%] 2xl:w-[122px] lg:w-[47px] w-[25px] h-[auto]"
-                src={starB}
-              />
+              <img className="absolute top-[-20%] left-[0] 2xl:w-[47px] lg:w-[47px] w-[25px] h-[auto]" src={starC} />
+              <img className="absolute top-[30%] right-[-30%] 2xl:w-[47px] lg:w-[47px] w-[25px] h-[auto]" src={starB} />
               <img
                 className="absolute right-[-15%] z-[-2] top-[-20%] 2xl:w-[370px] lg:w-[278px] w-[150px] h-[auto]"
                 src={doorA}
