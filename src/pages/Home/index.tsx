@@ -1,6 +1,10 @@
 import React, { FC, useEffect, useRef, useState } from 'react'
 import './index.scss'
 import { PAGInit } from 'libpag'
+import { gsap } from 'gsap'
+import { useGSAP } from '@gsap/react'
+import { Flip } from 'gsap/Flip' // 跟变化相关的特效
+import { ScrollTrigger } from 'gsap/ScrollTrigger' // 跟滚动相关的特效
 import logo from '@/assets/images/logo.png'
 import mobileLogo from '@/assets/images/mobile-logo.png'
 // seciton-secured
@@ -42,10 +46,18 @@ import aboutE from '@/assets/images/about/about-e.png'
 import aboutF from '@/assets/images/about/about-f.png'
 import aboutG from '@/assets/images/about/about-g.png'
 import aboutH from '@/assets/images/about/about-h.png'
+gsap.registerPlugin(useGSAP, Flip, ScrollTrigger)
+import ValueComponent from './components/Value'
 const Home: FC = () => {
   const [openMenu, setOpenMenu] = useState(false)
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1024)
+  const containerRef = useRef(null)
+  const handleResize = () => {
+    setIsMobile(window.innerWidth <= 1024)
+  }
   useEffect(() => {
-    PAGInit().then((PAG) => {
+    window.addEventListener('resize', handleResize)
+    PAGInit({ locateFile: () => './libpag.wasm' }).then((PAG) => {
       const url = './banner.pag'
       fetch(url)
         .then((response) => response.arrayBuffer())
@@ -59,9 +71,16 @@ const Home: FC = () => {
           await pagView.play()
         })
     })
+    return () => window.removeEventListener('resize', handleResize)
   }, [])
+  useGSAP(
+    () => {
+      const container: any = containerRef.current
+    },
+    { scope: containerRef, dependencies: [isMobile] }
+  )
   return (
-    <div className="homeContainer w-full">
+    <div className="homeContainer w-full" ref={containerRef}>
       <header className="fixed z-[10] w-full flex justify-between items-center lg:pt-[60px] 2xl:pt-[80px] pt-[30px] 2xl:px-[80px] lg:px-[60px] px-[20px]">
         <div className="logo lg:w-[223px] lg:h-[43px] w-[145px] h-[28px]">
           <img className="lg:w-[223px] lg:h-[43px] w-[145px] h-[28px]" src={logo} alt="Arttoo" />
@@ -367,101 +386,7 @@ const Home: FC = () => {
             </div>
           </div>
         </section>
-        <section className="value w-full relative">
-          <ul className="textList flex flex-col overflow-hidden shrink-0 font-[NewEddy] 2xl:text-[40px] 2xl:leading-[47px] lg:text-[30px] lg:leading-[35px] text-[20px] leading-[24px] 2xl:tracking-[3px] lg:tracking-[2px] tracking-[1px] opacity-[0.13]">
-            <li className="flex items-center justify-start 2xl:gap-[26px] lg:gap-[20px] gap-[13px] overflow-hidden shrink-0">
-              <p className="shrink-0">Henri Matisse</p>
-              <p className="shrink-0">Michelangelo Merisi da Caravaggio</p>
-              <p className="shrink-0">Tiziano Vecellio</p>
-              <p className="shrink-0">Rembrandt Harmenszoon van Rijn</p>
-              <p className="shrink-0">Vincent Willem van Gogh</p>
-            </li>
-            <li className="flex items-center justify-start 2xl:gap-[26px] lg:gap-[20px] gap-[13px] overflow-hidden shrink-0">
-              <p className="shrink-0">Vincent Willem van Gogh</p>
-              <p className="shrink-0">Paul Cézanne</p>
-              <p className="shrink-0">Johannes Vermeer</p>
-              <p className="shrink-0">Rembrandt Harmenszoon van Rijn</p>
-              <p className="shrink-0">Vincent Willem van Gogh</p>
-              <p className="shrink-0">Filippino Lippi</p>
-            </li>
-            <li className="flex items-center justify-start 2xl:gap-[26px] lg:gap-[20px] gap-[13px] overflow-hidden shrink-0">
-              <p className="shrink-0">Giotto di Bondone</p>
-              <p className="shrink-0">Rembrandt Harmenszoon van Rijn</p>
-              <p className="shrink-0">Jackson Pollock</p>
-              <p className="shrink-0">Leonardo di ser Piero da Vinci</p>
-              <p className="shrink-0">Filippino Lippi</p>
-              <p className="shrink-0">Filippino Lippi</p>
-            </li>
-            <li className="flex items-center justify-start 2xl:gap-[26px] lg:gap-[20px] gap-[13px] overflow-hidden shrink-0">
-              <p className="shrink-0">Tiziano Vecellio</p>
-              <p className="shrink-0">Raffaello Sanzio da Urbino</p>
-              <p className="shrink-0">Édouard Manet</p>
-              <p className="shrink-0">Raphael Sanzio</p>
-              <p className="shrink-0">Edgar Degas</p>
-              <p className="shrink-0">Filippino Lippi</p>
-              <p className="shrink-0">Filippino Lippi</p>
-            </li>
-            <li className="flex items-center justify-start 2xl:gap-[26px] lg:gap-[20px] gap-[13px] overflow-hidden shrink-0">
-              <p className="shrink-0">Raphael Sanzio</p>
-              <p className="shrink-0">Edgar Degas</p>
-              <p className="shrink-0">Oscar-Claude Monet</p>
-              <p className="shrink-0">Vincent Willem van Gogh</p>
-              <p className="shrink-0">Rembrandt Harmenszoon van Rijn</p>
-              <p className="shrink-0">Filippino Lippi</p>
-            </li>
-            <li className="flex items-center justify-start 2xl:gap-[26px] lg:gap-[20px] gap-[13px] overflow-hidden shrink-0">
-              <p className="shrink-0">Rembrandt Harmenszoon van Rijn</p>
-              <p className="shrink-0">Rembrandt Harmenszoon van Rijn</p>
-              <p className="shrink-0">Claude Monet</p>
-              <p className="shrink-0">Gustav Klimt</p>
-              <p className="shrink-0">Edgar Hilaire Germain de Gas</p>
-              <p className="shrink-0">Filippino Lippi</p>
-            </li>
-            <li className="flex items-center justify-start 2xl:gap-[26px] lg:gap-[20px] gap-[13px] overflow-hidden shrink-0">
-              <p className="shrink-0">Pablo Ruiz Picasso</p>
-              <p className="shrink-0">Leonardo di ser Piero da Vinci</p>
-              <p className="shrink-0">Raffaello Sanzio da Urbino</p>
-              <p className="shrink-0">Edgar Degas</p>
-              <p className="shrink-0">Filippino Lippi</p>
-              <p className="shrink-0">Rembrandt Harmenszoon van Rijn</p>
-            </li>
-            <li className="flex items-center justify-start 2xl:gap-[26px] lg:gap-[20px] gap-[13px] overflow-hidden shrink-0">
-              <p className="shrink-0">Henri Matisse</p>
-              <p className="shrink-0">Michelangelo Merisi da Caravaggio</p>
-              <p className="shrink-0">Tiziano Vecellio</p>
-              <p className="shrink-0">Rembrandt Harmenszoon van Rijn</p>
-              <p className="shrink-0">Filippino Lippi</p>
-              <p className="shrink-0">Rembrandt Harmenszoon van Rijn</p>
-            </li>
-            <li className="flex items-center justify-start 2xl:gap-[26px] lg:gap-[20px] gap-[13px] overflow-hidden shrink-0">
-              <p className="shrink-0">Giotto di Bondone</p>
-              <p className="shrink-0">Rembrandt Harmenszoon van Rijn</p>
-              <p className="shrink-0">Jackson Pollock</p>
-              <p className="shrink-0">Leonardo di ser Piero da Vinci</p>
-              <p className="shrink-0">Filippino Lippi</p>
-              <p className="shrink-0">Rembrandt Harmenszoon van Rijn</p>
-            </li>
-            <li className="flex items-center justify-start 2xl:gap-[26px] lg:gap-[20px] gap-[13px] overflow-hidden shrink-0">
-              <p className="shrink-0">Henri Matisse</p>
-              <p className="shrink-0">Michelangelo Merisi da Caravaggio</p>
-              <p className="shrink-0">Tiziano Vecellio</p>
-              <p className="shrink-0">Rembrandt Harmenszoon van Rijn</p>
-              <p className="shrink-0">Filippino Lippi</p>
-              <p className="shrink-0">Rembrandt Harmenszoon van Rijn</p>
-            </li>
-          </ul>
-          <div className="content absolute w-full text-center z-[1] left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]">
-            <p className="font-[600] font-[PoppinsRegular] 2xl:text-[28px] 2xl:leading-[33px] lg:text-[21px] lg:leading-[25px] text-[14px] leading-[16px]">
-              Total Locked Value
-            </p>
-            <p className="font-[NewEddy] 2xl:text-[157px] 2xl:leading-[184px] 2xl:tracking-[12px] lg:text-[118px] lg:leading-[138px] lg:tracking-[9px] text-[40px] leading-[47px] tracking-[3px]">
-              100,000,000 USD
-            </p>
-            <p className="font-[Lato] inline-block 2xl:px-[40px] 2xl:py-[22px] lg:px-[30px] lg:py-[17px] px-[30px] py-[16px] bg-[#E4FF1A]  font-[400] 2xl:text-[18px] 2xl:leading-[22px] lg:text-[14px] lg:leading-[16px] text-[14px] rounded-[978px] leading-[16px]">
-              Explore Artworks
-            </p>
-          </div>
-        </section>
+        <ValueComponent isMobile={isMobile} />
         <section className="secured w-full flex flex-col items-start justify-start 2xl:px-[80px] lg:px-[60px] px-[20px] 2xl:pt-[160px] lg:pt-[120px] pt-[40px] 2xl:pb-[220px] lg:pb-[165px] pb-[70px]">
           <p className="font-[NewEddy] tracking-[1px] 2xl:text-[75px] 2xl:leading-[88px] lg:text-[56px] lg:leading-[66px] text-[29px] leading-[34px]">
             YOUR INVESTMENTS
