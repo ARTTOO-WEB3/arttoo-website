@@ -7,10 +7,6 @@ import { Flip } from 'gsap/Flip' // 跟变化相关的特效
 import { ScrollTrigger } from 'gsap/ScrollTrigger' // 跟滚动相关的特效
 import logo from '@/assets/images/logo.png'
 import mobileLogo from '@/assets/images/mobile-logo.png'
-// seciton-secured
-import securedA from '@/assets/images/secured/secured-a.png'
-import securedB from '@/assets/images/secured/secured-b.png'
-import securedC from '@/assets/images/secured/secured-c.png'
 // section-earn
 import roundA from '@/assets/images/earn/round-a.png'
 import starA from '@/assets/images/earn/star-a.png'
@@ -48,6 +44,8 @@ import aboutG from '@/assets/images/about/about-g.png'
 import aboutH from '@/assets/images/about/about-h.png'
 gsap.registerPlugin(useGSAP, Flip, ScrollTrigger)
 import ValueComponent from './components/Value'
+import FooterComponet from '@/components/Footer'
+import SecuredComponent from './components/Secured'
 const Home: FC = () => {
   const [openMenu, setOpenMenu] = useState(false)
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1024)
@@ -387,76 +385,9 @@ const Home: FC = () => {
           </div>
         </section>
         <ValueComponent isMobile={isMobile} />
-        <section className="secured w-full flex flex-col items-start justify-start 2xl:px-[80px] lg:px-[60px] px-[20px] 2xl:pt-[160px] lg:pt-[120px] pt-[40px] 2xl:pb-[220px] lg:pb-[165px] pb-[70px]">
-          <p className="font-[NewEddy] tracking-[1px] 2xl:text-[75px] 2xl:leading-[88px] lg:text-[56px] lg:leading-[66px] text-[29px] leading-[34px]">
-            YOUR INVESTMENTS
-          </p>
-          <p className="font-[NewEddy] tracking-[1px] 2xl:text-[75px] 2xl:leading-[88px] lg:text-[56px] lg:leading-[66px] text-[29px] leading-[34px]">
-            ARE SECURED WITH US
-          </p>
-          <ul className="flex lg:flex-row lg:gap-[10px] flex-col lg:gap-0 gap-[48px] items-start justify-start 2xl:mt-[120px] lg:mt-[90px] mt-[60px]">
-            <li className="flex-1">
-              <div className="pic 2xl:w-[278px] lg:w-[209px] w-[204px]">
-                <img src={securedA} />
-              </div>
-              <p className="font-[Lato] font-[400] 2xl:mt-[48px] lg:mt-[36px] mt-[24px] 2xl:text-[24px] 2xl:leading-[28px] lg:text-[18px] lg:leading-[21px] text-[16px] leading-[19px] ">
-                Expert Authentication
-              </p>
-              <p className="font-[300] font-[PoppinsLight] 2xl:mt-[24px] lg:mt-[18px] mt-[12px] 2xl:text-[14px] 2xl:leading-[22px] lg:text-[11px] lg:leading-[17px] text-[10px] leading-[16px]">
-                We collaborates with renowned appraisers from GurrJohns(or other established appraisal firms)to
-                meticulously verify artwork authenticity,condition,and provenance,with its proof of appraisal embedded
-                directly within each token
-              </p>
-            </li>
-            <li className="flex-1">
-              <div className="pic w-[45px]">
-                <img src={securedB} />
-              </div>
-              <p className="font-[Lato] font-[400] 2xl:mt-[63px] lg:mt-[36px] mt-[24px] 2xl:text-[24px] 2xl:leading-[28px] lg:text-[18px] lg:leading-[21px] text-[16px] leading-[19px] ">
-                Comprehensive Insurance
-              </p>
-              <p className="font-[300] font-[PoppinsLight] 2xl:mt-[24px] lg:mt-[18px] mt-[12px] 2xl:text-[14px] 2xl:leading-[22px] lg:text-[11px] lg:leading-[17px] text-[10px] leading-[16px]">
-                We partner with a leading art insurance company to provide tailored coverage against theft damage,and
-                loss during transportation,storage and loans
-              </p>
-            </li>
-            <li className="flex-1">
-              <div className="pic 2xl:w-[184px] lg:w-[138px] w-[135px]">
-                <img src={securedC} />
-              </div>
-              <p className="font-[Lato] font-[400] 2xl:mt-[48px] lg:mt-[36px] mt-[24px] 2xl:text-[24px] 2xl:leading-[28px] lg:text-[18px] lg:leading-[21px] text-[16px] leading-[19px] ">
-                Secure Transportation & Storage
-              </p>
-              <p className="font-[300] font-[PoppinsLight] 2xl:mt-[24px] lg:mt-[18px] mt-[12px] 2xl:text-[14px] 2xl:leading-[22px] lg:text-[11px] lg:leading-[17px] text-[10px] leading-[16px]">
-                We partner with trusted companies like Momart and DIETL International,to ensure secure transportation of
-                the artwork from your location to our state-of-the-art storage facility equipped with advanced security
-                systems and climate control to guarantee its preservation.
-              </p>
-            </li>
-          </ul>
-        </section>
+        <SecuredComponent />
       </main>
-      <footer className="w-full bg-[#9c9c9c] text-[#FFFFFF] flex flex-col items-start justify-start 2xl:px-[80px] lg:px-[60px] px-[20px] 2xl:pt-[102px] lg:pt-[77px] pt-[50px] 2xl:pb-[126px] lg:pb-[95px] pb-[36px]">
-        <p className="title font-[NewEddy] 2xl:text-[58px] 2xl:leading-[68px] lg:text-[44px] lg:leading-[51px] text-[29px] leading-[34px] tracking-[1px]">
-          READY TO OWN YOUR PIECE OF HISTORY?
-        </p>
-        <form className="2xl:mt-[50px] relative lg:mt-[38px] mt-[41px]">
-          <input
-            className="border-white bg-[#9c9c9c] font-[PoppinsRegular] font-[400] 2xl:text-[24px] 2xl:leading-[28px] lg:text-[18px] lg:leading-[21px] text-[12px] leading-[14px] 2xl:w-[615px] lg:w-[461px] w-[308px] border rounded-[40px] 2xl:py-[22px] lg:py-[17px] py-[11px] 2xl:pl-[45px] lg:pl-[34px] pl-[23px]"
-            type="text"
-            placeholder="Johndoe@gmail.com"
-          />
-          <button
-            className="absolute text-[#000000] bg-[#E4FF1A] rounded-[32px] 2xl:px-[45px] lg:px-[34px] px-[22px] 2xl:py-[21px] lg:py-[16px] py-[10px] 2xl:text-[18px] 2xl:leading-[22px] lg:text-[14px] lg:leading-[16px] text-[9px] leading-[11px]  font-[400] font-[Lato] 2xl:right-[8px] lg:right-[6px] right-[4px] top-[50%] translate-y-[-50%]"
-            type="submit"
-          >
-            Submit
-          </button>
-        </form>
-        <p className="alert font-[PoppinsRegular] font-[400] 2xl:text-[16px] 2xl:leading-[19px] lg:text-[12px] lg:leading-[14px] text-[12px] leading-[14px]  2xl:mt-[22px] lg:mt-[17px] mt-[11px]">
-          Join the waitlist & Get Informed when New Artworks are Avaliable!
-        </p>
-      </footer>
+      <FooterComponet />
     </div>
   )
 }

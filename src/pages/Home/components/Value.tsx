@@ -32,7 +32,7 @@ const ValueComponent = (props: { isMobile: boolean }) => {
           scrollTrigger: {
             trigger: containerRef.current,
             start: 'top center', // 进入的时候直接开启动画
-            markers: true,
+            // markers: true,
             toggleActions: 'play none none reverse',
           },
         })
