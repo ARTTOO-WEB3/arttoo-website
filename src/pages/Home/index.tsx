@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useRef, useState } from 'react'
 import './index.scss'
 import { PAGInit } from 'libpag'
-import { gsap } from 'gsap'
+import { gsap, random } from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { Flip } from 'gsap/Flip' // 跟变化相关的特效
 import { ScrollTrigger } from 'gsap/ScrollTrigger' // 滚动
@@ -53,6 +53,21 @@ const Home: FC = () => {
   const handleResize = () => {
     setIsMobile(window.innerWidth <= 1024)
   }
+  const RandomName = () => {
+    const liNumbers = getUniqueRandomNumbers(0, 9, 10)
+    const pNumbers = getUniqueRandomNumbers(0, 5, 6)
+    return liNumbers
+      .map((liNth, index) => {
+        // 确保 pNumbers 中有相应的元素来匹配 liNumbers 中的元素sfsdfsdfsdfsdfsdf
+        if (index < pNumbers.length) {
+          const pNth = pNumbers[index]
+          return `.textList li:nth-of-type(${liNth}) p:nth-of-type(${pNth})`
+        }
+        return null
+      })
+      .filter((selector) => selector !== null)
+      .join(', ')
+  }
   useEffect(() => {
     window.addEventListener('resize', handleResize)
     PAGInit({ locateFile: () => './libpag.wasm' }).then((PAG) => {
@@ -74,19 +89,6 @@ const Home: FC = () => {
   useGSAP(
     () => {
       const container: any = containerRef.current
-      const liNumbers = getUniqueRandomNumbers(0, 9, 10)
-      const pNumbers = getUniqueRandomNumbers(0, 5, 6)
-      const selectors = liNumbers
-        .map((liNth, index) => {
-          // 确保 pNumbers 中有相应的元素来匹配 liNumbers 中的元素sfsdfsdfsdfsdfsdf
-          if (index < pNumbers.length) {
-            const pNth = pNumbers[index]
-            return `.textList li:nth-of-type(${liNth}) p:nth-of-type(${pNth})`
-          }
-          return null
-        })
-        .filter((selector) => selector !== null)
-        .join(', ')
       if (!isMobile) {
         // invest animation
         const gridTL = gsap.timeline({
@@ -312,18 +314,20 @@ const Home: FC = () => {
             { x: 0, scale: 1, display: 'block', ease: 'power2.out' },
             '+=1'
           )
-
-        // name animation order-last
-        gsap.to(selectors, {
-          opacity: 1,
-          stagger: 0.5,
-          duration: 0,
+        const nameTL = gsap.timeline({
           scrollTrigger: {
             trigger: '.value',
             start: 'top center',
             toggleActions: 'play none none reverse',
           },
         })
+        // name animation order-last
+        const fristList = RandomName()
+        const secondList = RandomName()
+        nameTL
+          .to(fristList, { opacity: 1 }, '+=1')
+          .to(fristList, { opacity: 0.13 }, '+=1')
+          .to(secondList, { opacity: 1 }, '<')
       } else {
         // 移动端的时候将恢复
         gsap.set('.textList > li > p', { clearProps: 'all' })
@@ -465,8 +469,11 @@ const Home: FC = () => {
               <li>
                 <img className="w-[28px] h-[195px] lg:w-[56px] lg:h-[389px] 2xl:w-[75px] 2xl:h-[518px]" src={aboutC} />
               </li>
-              <li>
-                <img className="w-[28px] h-[195px] lg:w-[56px] lg:h-[389px] 2xl:w-[75px] 2xl:h-[518px]" src={aboutD} />
+              <li className="">
+                <img
+                  className="w-[28px] object-cover h-[195px] lg:w-[56px] lg:h-[389px] 2xl:w-[75px] 2xl:h-[518px]"
+                  src={movePic}
+                />
               </li>
               <li>
                 <img className="w-[28px] h-[195px] lg:w-[56px] lg:h-[389px] 2xl:w-[75px] 2xl:h-[518px]" src={aboutE} />
