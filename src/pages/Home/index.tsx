@@ -42,7 +42,7 @@ import aboutD from '@/assets/images/about/about-d.png'
 import aboutE from '@/assets/images/about/about-e.png'
 import aboutF from '@/assets/images/about/about-f.png'
 import aboutG from '@/assets/images/about/about-g.png'
-import aboutH from '@/assets/images/about/about-h.png'
+import aboutH from '@/assets/images/about/about-h.png' // 测四
 gsap.registerPlugin(useGSAP, Flip, ScrollTrigger)
 import FooterComponet from '@/components/Footer'
 import SecuredComponent from './components/Secured'
@@ -88,15 +88,231 @@ const Home: FC = () => {
         .filter((selector) => selector !== null)
         .join(', ')
       if (!isMobile) {
+        // invest animation
         const gridTL = gsap.timeline({
-          scrollTrigger: { trigger: '.invest', start: 'top top', end: '+=1000', scrub: 1, pin: true },
+          scrollTrigger: { trigger: '.invest', start: 'top top', end: '+=2000', scrub: 1, pin: true },
         })
-        // gridTL.fromTo(
-        //   '.investRightText1',
-        //   { y: 100, opacity: 0 },
-        //   { y: 0, opacity: 1, display: 'block', duration: 4, ease: 'power2.out' },
-        //   '>'
-        // )
+        gridTL
+          .fromTo(
+            '.investRightText1',
+            {
+              y: 50,
+              opacity: 0,
+            },
+            {
+              y: 0,
+              opacity: 1,
+              display: 'block',
+              ease: 'power2.out',
+            },
+            '>'
+          )
+          .fromTo(
+            '.investRightText2',
+            {
+              y: 50,
+              opacity: 0,
+            },
+            {
+              y: 0,
+              opacity: 1,
+              display: 'block',
+              ease: 'power2.out',
+            },
+            '+=1'
+          )
+          .fromTo(
+            '.investRightText3',
+            {
+              y: 50,
+              opacity: 0,
+            },
+            {
+              y: 0,
+              opacity: 1,
+              display: 'block',
+              ease: 'power2.out',
+            },
+            '+=1' // 测试
+          )
+          .to('.pixA', { x: -100, scale: 0.5, opacity: 0.7, ease: 'power2.out' }, '+=2')
+          .to('.pixB', { y: -100, scale: 0.5, opacity: 0.4, ease: 'power2.out' }, '<')
+          .to('.pixC', { x: 100, scale: 0.5, opacity: 0.4, ease: 'power2.out' }, '<')
+          .to('.pixD', { x: -50, scale: 0.2, opacity: 0.4, ease: 'power2.out' }, '<')
+          .to('.pixE', { scale: 2, duration: 2, ease: 'power2.out' }, '<')
+          .to('.pixF', { x: 100, scale: 0.3, opacity: 0.4, ease: 'power2.out' }, '<')
+          .to('.pixG', { x: -100, scale: 0.5, opacity: 0.7, ease: 'power2.out' }, '<')
+          .to('.pixH', { y: 100, scale: 0.5, opacity: 0.4, ease: 'power2.out' }, '<')
+          .to('.pixI', { x: 200, scale: 0.7, opacity: 0.4, ease: 'power2.out' }, '<')
+          .to('.investRightText1', { y: -100, opacity: 0, visibility: 'none', ease: 'power2.out' }, '+=2')
+          .to('.investRightText2', { y: -100, opacity: 0, visibility: 'none', ease: 'power2.out' }, '+=1')
+          .to('.investRightText3', { y: -100, opacity: 0, visibility: 'none', ease: 'power2.out' }, '+=1')
+          .to('.invest .investLeftOne', { display: 'none', ease: 'power2.out' }, '<')
+          .to('.invest .investRightOne', { display: 'none', ease: 'power2.out' }, '<')
+          .to('.invest .investLeftTwo', { display: 'block', ease: 'power2.out' }, '+=1')
+          .to('.invest .investRightTwo', { display: 'flex', ease: 'power2.out' }, '<')
+          .fromTo(
+            '.doorA',
+            { y: 100, opacity: 0, display: 'none' },
+            { y: 0, opacity: 1, display: 'block', ease: 'power2.out' },
+            '<'
+          )
+          .fromTo(
+            '.doorB',
+            { y: 200, opacity: 0, display: 'none' },
+            { y: 0, opacity: 1, display: 'block', ease: 'power2.out' },
+            '+=1'
+          )
+          .fromTo(
+            '.pixRightA',
+            { x: -100, scale: 0.5, opacity: 0.7 },
+            {
+              x: 0,
+              scale: 1,
+              opacity: 1,
+              ease: 'bounce.out',
+            },
+            '<'
+          )
+          .fromTo(
+            '.pixRightB',
+            { y: -100, scale: 0.5, opacity: 0.4 },
+            {
+              y: 0,
+              x: 0,
+              scale: 1,
+              opacity: 1,
+              ease: 'bounce.out',
+            },
+            '<'
+          )
+          .fromTo(
+            '.pixRightC',
+            { x: 100, scale: 0.5, opacity: 0.4 },
+            {
+              y: 0,
+              x: 0,
+              scale: 1,
+              opacity: 1,
+              ease: 'bounce.out',
+            },
+            '<'
+          )
+          .fromTo(
+            '.pixRightD',
+            { x: -50, scale: 0.2, opacity: 0.4 },
+            {
+              y: 0,
+              x: 0,
+              scale: 1,
+              opacity: 1,
+              ease: 'bounce.out',
+            },
+            '<'
+          )
+          .fromTo(
+            '.pixRightE',
+            { scale: 2 },
+            {
+              y: 0,
+              x: 0,
+              scale: 1,
+              opacity: 1,
+              ease: 'bounce.out',
+            },
+            '<'
+          )
+          .fromTo(
+            '.pixRightF',
+            { x: 100, scale: 0.3, opacity: 0.4 },
+            {
+              y: 0,
+              x: 0,
+              scale: 1,
+              opacity: 1,
+              ease: 'bounce.out',
+            },
+            '<'
+          )
+          .fromTo(
+            '.pixRightG',
+            { x: -100, scale: 0.5, opacity: 0.7 },
+            {
+              y: 0,
+              x: 0,
+              scale: 1,
+              opacity: 1,
+              ease: 'bounce.out',
+            },
+            '<'
+          )
+          .fromTo(
+            '.pixRightH',
+            { y: 100, scale: 0.5, opacity: 0.4 },
+            {
+              y: 0,
+              x: 0,
+              scale: 1,
+              opacity: 1,
+              ease: 'bounce.out',
+            },
+            '<'
+          )
+          .fromTo(
+            '.pixRightI',
+            { x: 200, scale: 0.7, opacity: 0.4 },
+            {
+              y: 0,
+              x: 0,
+              scale: 1,
+              opacity: 1,
+              ease: 'bounce.out',
+            },
+            '<'
+          )
+          .fromTo(
+            '.invsetLeftText1',
+            { y: 50, opacity: 0 },
+            { y: 0, opacity: 1, display: 'block', ease: 'power2.out' },
+            '<'
+          )
+          .fromTo(
+            '.starB',
+            { x: -100, scale: 0.3, display: 'none' },
+            { x: 0, scale: 1, display: 'block', ease: 'power2.out' },
+            '<'
+          )
+          .fromTo(
+            '.invsetLeftText2',
+            { y: 50, opacity: 0 },
+            { y: 0, opacity: 1, display: 'block', ease: 'power2.out' },
+            '+=1'
+          )
+          .fromTo(
+            '.invsetLeftText3',
+            { y: 50, opacity: 0 },
+            { y: 0, opacity: 1, display: 'block', ease: 'power2.out' },
+            '+=1'
+          )
+          .fromTo(
+            '.starA',
+            { y: 50, scale: 0.3, display: 'none' },
+            { y: 0, scale: 1, display: 'block', ease: 'power2.out' },
+            '+=1'
+          )
+          .fromTo(
+            '.starC',
+            { x: 200, scale: 0.3, display: 'none' },
+            { x: 0, scale: 1, display: 'block', ease: 'power2.out' },
+            '+=1'
+          )
+          .fromTo(
+            '.roundA',
+            { x: 200, scale: 0.3, display: 'none' },
+            { x: 0, scale: 1, display: 'block', ease: 'power2.out' },
+            '+=1'
+          )
+
         // name animation order-last
         gsap.to(selectors, {
           opacity: 1,
@@ -105,13 +321,20 @@ const Home: FC = () => {
           scrollTrigger: {
             trigger: '.value',
             start: 'top center',
-            markers: true,
             toggleActions: 'play none none reverse',
           },
         })
       } else {
+        // 移动端的时候将恢复
+        gsap.set('.textList > li > p', { clearProps: 'all' })
         ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
-        gsap.set('.textList > li > p', { opacity: 0.13, clearProps: 'all' })
+        // 先把自身的样式清除掉即可,haha
+        gsap.set('.investRightText1', { clearProps: 'all' })
+        gsap.set('.investRightText1', { display: 'block' })
+        gsap.set('.investRightText2', { clearProps: 'all' })
+        gsap.set('.investRightText2', { display: 'block' })
+        gsap.set('.investRightText3', { clearProps: 'all' })
+        gsap.set('.investRightText3', { display: 'block' })
       }
     },
     { scope: containerRef, dependencies: [isMobile] }
@@ -325,7 +548,7 @@ const Home: FC = () => {
             </div>
           </div>
         </section>
-        <section className="explore w-full flex flex-col items-center justify-center 2xl:pt-[220px] lg:pt-[165px] pt-[245px]">
+        <section className="explore w-full overflow-hidden  flex flex-col items-center justify-center 2xl:pt-[220px] lg:pt-[165px] pt-[245px]">
           <p className="font-[PoppinsRegular] lg:text-[22px] lg:leading-[26px] text-[12px] leading-[14px]">
             Own a Piece of History in 3 Simple Steps
           </p>
@@ -362,78 +585,84 @@ const Home: FC = () => {
         <section className="invest w-full flex lg:flex-row flex-col-reverse items-start justify-start 2xl:px-[80px] lg:px-[60px] px-[20px] 2xl:pt-[240px] lg:pt-[180px] pt-[188px] 2xl:pb-[212px] lg:pb-[159px] pb-[60px]">
           <div className="invsetLeft w-full flex-1">
             <div className="investLeftOne flex items-center justify-center">
-              <div className="picList grid grid-cols-3">
-                <img className="w-[142px]  h-[115px]" src={pixA} />
-                <img className="w-[142px]  h-[115px]" src={pixB} />
-                <img className="w-[142px]  h-[115px]" src={pixC} />
-                <img className="w-[142px]  h-[115px]" src={pixD} />
-                <img className="w-[142px]  h-[115px]" src={pixE} />
-                <img className="w-[142px]  h-[115px]" src={pixF} />
-                <img className="w-[142px]  h-[115px]" src={pixG} />
-                <img className="w-[142px]  h-[115px]" src={pixH} />
-                <img className="w-[142px]  h-[115px]" src={pixI} />
+              <div className="picList grid grid-cols-3 2xl:w-[547px] 2xl:h-[444px] lg:w-[410px] lg:h-[333px] w-[221px] h-[179px]">
+                <img className="pixA" src={pixA} />
+                <img className="pixB" src={pixB} />
+                <img className="pixC" src={pixC} />
+                <img className="pixD" src={pixD} />
+                <img className="pixE" src={pixE} />
+                <img className="pixF" src={pixF} />
+                <img className="pixG" src={pixG} />
+                <img className="pixH" src={pixH} />
+                <img className="pixI" src={pixI} />
               </div>
             </div>
-            {/* <div className="investLeftTwo hidden">
-              <p className="font-[400] font-[PoppinsRegular] text-[12px] leading-[14px] lg:text-[16px] lg:leading-[19px]">
+            <div className="investLeftTwo hidden">
+              <p className="hidden invsetLeftText1 font-[400] font-[PoppinsRegular] text-[12px] leading-[14px] lg:text-[16px] lg:leading-[19px]">
                 <span>003</span>
                 <span className="text-[#AAAAAA]"> / 003</span>
               </p>
-              <p className="font-[NewEddy] lg:tracking-[8px] tracking-[3px] lg:text-[100px] lg:leading-[117px] text-[38px] leading-[44px]">
+              <p className="hidden invsetLeftText2 font-[NewEddy] lg:tracking-[8px] tracking-[3px] lg:text-[100px] lg:leading-[117px] text-[38px] leading-[44px]">
                 EARN
               </p>
-              <p className="font-[400] font-[PoppinsRegular] 2xl:text-[24px] 2xl:leading-[28px] lg:text-[18px] lg:leading-[21px] text-[12px] leading-[14px]">
+              <p className="hidden invsetLeftText3 font-[400] font-[PoppinsRegular] 2xl:text-[24px] 2xl:leading-[28px] lg:text-[18px] lg:leading-[21px] text-[12px] leading-[14px]">
                 Watch your investment grow in value through exhibitions of museums and galleries,NFT merchandise and so
                 much more.
               </p>
-            </div> */}
+            </div>
           </div>
           <div className="invsetRight w-full flex-1">
             <div className="investRightOne">
-              <p className="investRightText1 font-[400] font-[PoppinsRegular] lg:text-[16px] lg:leading-[19px] text-[12px] leading-[14px]">
+              <p className="investRightText1 hidden font-[400] font-[PoppinsRegular] lg:text-[16px] lg:leading-[19px] text-[12px] leading-[14px]">
                 <span>002</span>
                 <span className="text-[#AAAAAA]"> / 003</span>
               </p>
-              <p className="investRightText2 font-[NewEddy] lg:tracking-[8px] tracking-[3px] lg:text-[75px] lg:leading-[88px] text-[38px] leading-[44px]">
+              <p className="investRightText2 hidden font-[NewEddy] lg:tracking-[8px] tracking-[3px] lg:text-[75px] lg:leading-[88px] text-[38px] leading-[44px]">
                 INVEST
               </p>
-              <p className="investRightText3 font-[PoppinsRegular] lg:mt-[20px] mt-[10px] lg:text-[18px] lg:leading-[21px] text-[12px] leading-[14px] mb-[32px]">
+              <p className="investRightText3 hidden font-[PoppinsRegular] lg:mt-[20px] mt-[10px] lg:text-[18px] lg:leading-[21px] text-[12px] leading-[14px] mb-[32px]">
                 Invest in a fraction of masterpieces for a fraction of its total cost via our platform
               </p>
             </div>
-            {/* <div className="investRightTwo hidden mt-[120px] lg:mt-0  flex lg:justify-start items-center justify-center">
+            <div className="investRightTwo hidden mt-[120px] lg:mt-0  flex lg:justify-start items-center justify-center">
               <div className="relative">
                 <img
-                  className="absolute bottom-[-20%] left-[-20%] 2xl:w-[122px] lg:w-[91px] w-[50px] h-[auto]"
+                  className="hidden roundA absolute bottom-[-20%] left-[-20%] 2xl:w-[122px] lg:w-[91px] w-[50px] h-[auto]"
                   src={roundA}
                 />
-                <img className="absolute top-[0] left-[-20%] 2xl:w-[28px] lg:w-[28px] w-[11px] h-[auto]" src={starA} />
-                <img className="absolute top-[-20%] left-[0] 2xl:w-[47px] lg:w-[47px] w-[25px] h-[auto]" src={starC} />
                 <img
-                  className="absolute top-[30%] right-[-30%] 2xl:w-[47px] lg:w-[47px] w-[25px] h-[auto]"
+                  className="hidden starA absolute top-[0] left-[-20%] 2xl:w-[28px] lg:w-[28px] w-[11px] h-[auto]"
+                  src={starA}
+                />
+                <img
+                  className="hidden starC absolute top-[-20%] left-[0] 2xl:w-[47px] lg:w-[47px] w-[25px] h-[auto]"
+                  src={starC}
+                />
+                <img
+                  className="hidden starB absolute top-[30%] right-[-30%] 2xl:w-[47px] lg:w-[47px] w-[25px] h-[auto]"
                   src={starB}
                 />
                 <img
-                  className="absolute right-[-15%] z-[-2] top-[-20%] 2xl:w-[370px] lg:w-[278px] w-[150px] h-[auto]"
+                  className="hidden doorA absolute right-[-15%] z-[-2] top-[-20%] 2xl:w-[370px] lg:w-[278px] w-[150px] h-[auto]"
                   src={doorA}
                 />
                 <img
-                  className="absolute bottom-[-25%] right-[-25%]  z-[-1] 2xl:w-[229px] lg:w-[172px]  w-[94px] h-[auto]"
+                  className="hidden doorB absolute bottom-[-25%] right-[-25%]  z-[-1] 2xl:w-[229px] lg:w-[172px]  w-[94px] h-[auto]"
                   src={doorB}
                 />
-                <div className="fly grid grid-cols-3 gap-[0] 2xl:w-[547px] lg:w-[410px] w-[221px] h-[auto]">
-                  <img className="pixRightA w-[142px]  h-[auto]" src={pixA} />
-                  <img className="pixRightB w-[142px]  h-[auto]" src={pixB} />
-                  <img className="pixRightC w-[142px]  h-[auto]" src={pixC} />
-                  <img className="pixRightD w-[142px]  h-[auto]" src={pixD} />
-                  <img className="pixRightE w-[142px]  h-[auto]" src={pixE} />
-                  <img className="pixRightF w-[142px]  h-[auto]" src={pixF} />
-                  <img className="pixRightG w-[142px]  h-[auto]" src={pixG} />
-                  <img className="pixRightH w-[142px]  h-[auto]" src={pixH} />
-                  <img className="pixRightI w-[142px]  h-[auto]" src={pixI} />
+                <div className="fly grid grid-cols-3 block gap-[0] 2xl:w-[547px] 2xl:h-[444px] lg:w-[410px] lg:h-[333px] w-[221px] h-[179px]">
+                  <img className="pixRightA" src={pixA} />
+                  <img className="pixRightB" src={pixB} />
+                  <img className="pixRightC" src={pixC} />
+                  <img className="pixRightD" src={pixD} />
+                  <img className="pixRightE" src={pixE} />
+                  <img className="pixRightF" src={pixF} />
+                  <img className="pixRightG" src={pixG} />
+                  <img className="pixRightH" src={pixH} />
+                  <img className="pixRightI" src={pixI} />
                 </div>
               </div>
-            </div> */}
+            </div>
           </div>
         </section>
         {isMobile ? (
@@ -472,15 +701,15 @@ const Home: FC = () => {
                   src={doorB}
                 />
                 <div className="fly grid grid-cols-3 gap-[0] w-[221px] h-[auto]">
-                  <img className="pixRightA w-[142px]  h-[auto]" src={pixA} />
-                  <img className="pixRightB w-[142px]  h-[auto]" src={pixB} />
-                  <img className="pixRightC w-[142px]  h-[auto]" src={pixC} />
-                  <img className="pixRightD w-[142px]  h-[auto]" src={pixD} />
-                  <img className="pixRightE w-[142px]  h-[auto]" src={pixE} />
-                  <img className="pixRightF w-[142px]  h-[auto]" src={pixF} />
-                  <img className="pixRightG w-[142px]  h-[auto]" src={pixG} />
-                  <img className="pixRightH w-[142px]  h-[auto]" src={pixH} />
-                  <img className="pixRightI w-[142px]  h-[auto]" src={pixI} />
+                  <img className="w-[142px]  h-[auto]" src={pixA} />
+                  <img className="w-[142px]  h-[auto]" src={pixB} />
+                  <img className="w-[142px]  h-[auto]" src={pixC} />
+                  <img className="w-[142px]  h-[auto]" src={pixD} />
+                  <img className="w-[142px]  h-[auto]" src={pixE} />
+                  <img className="w-[142px]  h-[auto]" src={pixF} />
+                  <img className="w-[142px]  h-[auto]" src={pixG} />
+                  <img className="w-[142px]  h-[auto]" src={pixH} />
+                  <img className="w-[142px]  h-[auto]" src={pixI} />
                 </div>
               </div>
             </div>
