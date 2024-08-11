@@ -161,7 +161,7 @@ const Home: FC = () => {
         ScrollTrigger.create({
           trigger: '.data',
           scrub: 1,
-          markers: true,
+          // markers: true,
           start: 'top top',
           endTrigger: step3, // 这个应该就是关键的地方了
           end: 'top 85%', // 拉到endPos的底部的时候结束
