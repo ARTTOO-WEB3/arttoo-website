@@ -84,13 +84,135 @@ const Home: FC = () => {
           await pagView.play()
         })
     })
-    return () => window.removeEventListener('resize', handleResize)
   }, [])
   useGSAP(
     () => {
       const container: any = containerRef.current
+      const step1 = container.querySelector('.step1')
+      const step2 = container.querySelector('.step2')
+      const step3 = container.querySelector('.step3')
+      const step4 = container.querySelector('.step4')
+      const step1Pic = container.querySelector('.step1Pic')
+      const step2Pic = container.querySelector('.step2Pic')
+      const step3Pic = container.querySelector('.step3Pic')
       if (!isMobile) {
-        // invest animation
+        // ================  section-data动画段  ==================
+        step1.appendChild(step1Pic)
+        const state = Flip.getState(step1Pic, { props: 'transform' })
+        step2.appendChild(step1Pic)
+        const flip = Flip.from(state, {
+          absolute: true,
+          duration: 3, // Ensure the animation is short for smoothness
+        })
+        ScrollTrigger.create({
+          trigger: '.about',
+          scrub: 1,
+          start: 'top top',
+          endTrigger: step2,
+          end: 'bottom bottom',
+          animation: flip,
+          onEnter: () => {
+            // 动画开始的时候隐藏目标图片
+            step2Pic.style.visibility = 'hidden'
+          },
+          onLeave: () => {
+            // 动画结束的时候恢复
+            const dataTL = gsap.timeline({ duration: 0 })
+            dataTL
+              .to('.dataLeftImg', { opacity: 1 }, '<')
+              .fromTo('.dataLeftText1', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.1 }, '+=0.01')
+              .fromTo('.dataLeftText2', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.1 }, '+=0.01')
+              .fromTo('.dataLeftText3', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.1 }, '+=0.01')
+              .fromTo('.dataLeftText4', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.1 }, '+=0.01')
+              .fromTo('.dataLeftText5', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.1 }, '+=0.01')
+              .fromTo('.dataLeftText6', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.1 }, '+=0.01')
+              .fromTo('.dataRightImg', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.1 }, '+=0.01')
+              .fromTo('.dataRightText1', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.1 }, '+=0.01')
+              .fromTo('.dataRightText2', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.1 }, '+=0.01')
+            step2Pic.style.visibility = 'visible'
+            step1Pic.style.visibility = 'hidden'
+          },
+          onEnterBack: () => {
+            const dataBackTL = gsap.timeline({ duration: 0 })
+            dataBackTL
+              .fromTo('.dataRightText2', { y: 0, opacity: 1 }, { y: 20, opacity: 0, duration: 0.1 }, '+=0.01')
+              .fromTo('.dataRightText1', { y: 0, opacity: 1 }, { y: 20, opacity: 0, duration: 0.1 }, '+=0.01')
+              .fromTo('.dataRightImg', { y: 0, opacity: 1 }, { y: 20, opacity: 0, duration: 0.1 }, '<')
+              .fromTo('.dataLeftText6', { y: 0, opacity: 1 }, { y: 20, opacity: 0, duration: 0.1 }, '+=0.01')
+              .fromTo('.dataLeftText5', { y: 0, opacity: 1 }, { y: 20, opacity: 0, duration: 0.1 }, '+=0.01')
+              .fromTo('.dataLeftText4', { y: 0, opacity: 1 }, { y: 20, opacity: 0, duration: 0.1 }, '+=0.01')
+              .fromTo('.dataLeftText3', { y: 0, opacity: 1 }, { y: 20, opacity: 0, duration: 0.1 }, '+=0.01')
+              .fromTo('.dataLeftText2', { y: 0, opacity: 1 }, { y: 20, opacity: 0, duration: 0.1 }, '+=0.01')
+              .fromTo('.dataLeftText1', { y: 0, opacity: 1 }, { y: 20, opacity: 0, duration: 0.1 }, '+=0.01')
+              .to('.dataLeftImg', { opacity: 0 }, '<')
+            step2Pic.style.visibility = 'hidden'
+            step1Pic.style.visibility = 'visible'
+          },
+          onLeaveBack: () => {},
+        })
+        // ===============  section-explore  ============
+        step2.appendChild(step2Pic)
+        const state2 = Flip.getState(step2Pic, { props: 'transform' })
+        step3.appendChild(step2Pic)
+        const flip2 = Flip.from(state2, {
+          absolute: true,
+          duration: 5, // Ensure the animation is short for smoothness
+        })
+        ScrollTrigger.create({
+          trigger: '.data',
+          scrub: 1,
+          markers: true,
+          start: 'top top',
+          endTrigger: step3, // 这个应该就是关键的地方了
+          end: 'top 85%', // 拉到endPos的底部的时候结束
+          animation: flip2,
+          onEnter: () => {
+            step3Pic.style.visibility = 'hidden'
+          },
+          onLeave: () => {
+            step2Pic.style.visibility = 'hidden'
+            step3Pic.style.visibility = 'visible'
+            const exploreTL = gsap.timeline({ duration: 0 })
+            exploreTL.fromTo('.exploreText1', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.1 }, '+=0.1')
+            exploreTL.fromTo('.exploreText2', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.1 }, '+=0.01')
+            exploreTL.fromTo('.exploreText3', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.1 }, '+=0.01')
+            exploreTL.fromTo('.exploreText4', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.1 }, '+=0.01')
+          },
+          onEnterBack: () => {
+            step2Pic.style.visibility = 'visible'
+            step3Pic.style.visibility = 'hidden'
+            const exploreBackTL = gsap.timeline({ duration: 0 })
+            exploreBackTL.fromTo('.exploreText1', { y: 0, opacity: 1 }, { y: 20, opacity: 0, duration: 0.1 }, '+=0.01')
+            exploreBackTL.fromTo('.exploreText2', { y: 0, opacity: 1 }, { y: 20, opacity: 0, duration: 0.1 }, '+=0.01')
+            exploreBackTL.fromTo('.exploreText3', { y: 0, opacity: 1 }, { y: 20, opacity: 0, duration: 0.1 }, '+=0.01')
+            exploreBackTL.fromTo('.exploreText4', { y: 0, opacity: 1 }, { y: 20, opacity: 0, duration: 0.1 }, '+=0.01')
+          },
+          onLeaveBack: () => {},
+        })
+        // ===========  section-invest =============
+        step3.appendChild(step3Pic)
+        const state3 = Flip.getState(step3Pic, { props: 'transform' })
+        step4.appendChild(step3Pic)
+        const flip3 = Flip.from(state3, {
+          absolute: true,
+          duration: 5, // Ensure the animation is short for smoothness
+        })
+        ScrollTrigger.create({
+          trigger: '.explore',
+          scrub: 1,
+          // markers: true,
+          start: 'bottom bottom',
+          endTrigger: step4, // 这个应该就是关键的地方了
+          end: 'bottom bottom', // 拉到endPos的底部的时候结束
+          animation: flip3,
+          onLeave: () => {
+            step3Pic.style.visibility = 'hidden'
+          },
+          onEnterBack: () => {
+            step3Pic.style.visibility = 'visible'
+          },
+        })
+        // ============  section-invest ===============
         const gridTL = gsap.timeline({
           scrollTrigger: { trigger: '.invest', start: 'top top', end: '+=2000', scrub: 1, pin: true },
         })
@@ -135,13 +257,13 @@ const Home: FC = () => {
               display: 'block',
               ease: 'power2.out',
             },
-            '+=1' // 测试
+            '+=1'
           )
           .to('.pixA', { x: -100, scale: 0.5, opacity: 0.7, ease: 'power2.out' }, '+=2')
           .to('.pixB', { y: -100, scale: 0.5, opacity: 0.4, ease: 'power2.out' }, '<')
           .to('.pixC', { x: 100, scale: 0.5, opacity: 0.4, ease: 'power2.out' }, '<')
           .to('.pixD', { x: -50, scale: 0.2, opacity: 0.4, ease: 'power2.out' }, '<')
-          .to('.pixE', { scale: 2, duration: 2, ease: 'power2.out' }, '<')
+          .to('.pixE', { scale: 2, ease: 'power2.out' }, '<')
           .to('.pixF', { x: 100, scale: 0.3, opacity: 0.4, ease: 'power2.out' }, '<')
           .to('.pixG', { x: -100, scale: 0.5, opacity: 0.7, ease: 'power2.out' }, '<')
           .to('.pixH', { y: 100, scale: 0.5, opacity: 0.4, ease: 'power2.out' }, '<')
@@ -314,6 +436,7 @@ const Home: FC = () => {
             { x: 0, scale: 1, display: 'block', ease: 'power2.out' },
             '+=1'
           )
+        // ========== section-value =================
         const nameTL = gsap.timeline({
           scrollTrigger: {
             trigger: '.value',
@@ -329,16 +452,38 @@ const Home: FC = () => {
           .to(fristList, { opacity: 0.13 }, '+=1')
           .to(secondList, { opacity: 1 }, '<')
       } else {
-        // 移动端的时候将恢复
         gsap.set('.textList > li > p', { clearProps: 'all' })
         ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
-        // 先把自身的样式清除掉即可,haha
+        // TODO:这里为啥必须放在后面,不太清楚
         gsap.set('.investRightText1', { clearProps: 'all' })
         gsap.set('.investRightText1', { display: 'block' })
         gsap.set('.investRightText2', { clearProps: 'all' })
         gsap.set('.investRightText2', { display: 'block' })
         gsap.set('.investRightText3', { clearProps: 'all' })
         gsap.set('.investRightText3', { display: 'block' })
+        gsap.set('.step1Pic', { clearProps: 'all' })
+        gsap.set('.step2Pic', { clearProps: 'all' })
+        gsap.set('.step3Pic', { clearProps: 'all' })
+        // reset-section-data
+        gsap.set('.dataLeftImg', { clearProps: 'all' })
+        gsap.set('.dataLeftText1', { clearProps: 'all' })
+        gsap.set('.dataLeftText2', { clearProps: 'all' })
+        gsap.set('.dataLeftText3', { clearProps: 'all' })
+        gsap.set('.dataLeftText4', { clearProps: 'all' })
+        gsap.set('.dataLeftText5', { clearProps: 'all' })
+        gsap.set('.dataLeftText6', { clearProps: 'all' })
+        gsap.set('.dataRightImg', { clearProps: 'all' })
+        gsap.set('.dataRightText1', { clearProps: 'all' })
+        gsap.set('.dataRightText2', { clearProps: 'all' })
+        // reset-section-explore
+        gsap.set('.exploreText1', { clearProps: 'all' })
+        gsap.set('.exploreText2', { clearProps: 'all' })
+        gsap.set('.exploreText3', { clearProps: 'all' })
+        gsap.set('.exploreText4', { clearProps: 'all' })
+        //  TODO:待测试是否有问题
+        step1.appendChild(step1Pic)
+        step2.appendChild(step2Pic)
+        step3.appendChild(step3Pic)
       }
     },
     { scope: containerRef, dependencies: [isMobile] }
@@ -469,11 +614,8 @@ const Home: FC = () => {
               <li>
                 <img className="w-[28px] h-[195px] lg:w-[56px] lg:h-[389px] 2xl:w-[75px] 2xl:h-[518px]" src={aboutC} />
               </li>
-              <li className="">
-                <img
-                  className="w-[28px] object-cover h-[195px] lg:w-[56px] lg:h-[389px] 2xl:w-[75px] 2xl:h-[518px]"
-                  src={movePic}
-                />
+              <li className="step1 relative w-[28px] h-[195px] lg:w-[56px] lg:h-[389px] 2xl:w-[75px] 2xl:h-[518px]">
+                <img className="absolute z-[999] w-full h-full object-cover step1Pic" src={movePic} />
               </li>
               <li>
                 <img className="w-[28px] h-[195px] lg:w-[56px] lg:h-[389px] 2xl:w-[75px] 2xl:h-[518px]" src={aboutE} />
@@ -513,78 +655,78 @@ const Home: FC = () => {
         </section>
         <section className="data flex lg:flex-row flex-col lg:gap-[40px] items-center justify-start 2xl:mx-[40px] lg:mx-[30px] mx-[10px] 2xl:px-[40px] lg:px-[30px] px-[10px] 2xl:pt-[71px] lg:pt-[53px] pt-[20px] 2xl:pb-[180px] lg:pb-[135px] pb-[48px] bg-[#eeeeee]">
           <div className="left w-full flex-1 flex flex-col items-start justify-start">
-            <img src={dataA} className="w-[170px] h-[25px]" />
+            <img src={dataA} className="dataLeftImg w-[170px] lg:opacity-[0] h-[25px]" />
             <ul className="self-start 2xl:pt-[92px] lg:pt-[69px] pt-[24px] lg:pl-[15%] pl-[30px] lg:self-start">
               <li>
-                <p className="font-[NewEddy] 2xl:text-[60px] 2xl:leading-[70px] lg:text-[45px] lg:leading-[53px] text-[20px] leading-[23px]">
+                <p className="font-[NewEddy] dataLeftText1 lg:opacity-[0] 2xl:text-[60px] 2xl:leading-[70px] lg:text-[45px] lg:leading-[53px] text-[20px] leading-[23px]">
                   $11.8 BILLION
                 </p>
-                <p className="font-[300] font-[PoppinsLight] 2xl:text-[16px] 2xl:leading-[26px] lg:text-[12px] lg:leading-[19px] text-[10px] leading-[16px]">
+                <p className="font-[300] dataLeftText2 lg:opacity-[0] font-[PoppinsLight] 2xl:text-[16px] 2xl:leading-[26px] lg:text-[12px] lg:leading-[19px] text-[10px] leading-[16px]">
                   in online-only sales volume,doubled since 2019
                 </p>
               </li>
               <li className="2xl:mt-[63px] lg:mt-[47px] mt-[16px]">
-                <p className="font-[NewEddy] 2xl:text-[60px] 2xl:leading-[70px] lg:text-[45px] lg:leading-[53px] text-[20px] leading-[23px]">
+                <p className="font-[NewEddy] dataLeftText3 lg:opacity-[0] 2xl:text-[60px] 2xl:leading-[70px] lg:text-[45px] lg:leading-[53px] text-[20px] leading-[23px]">
                   14.9% CAGR
                 </p>
-                <p className="font-[300] font-[PoppinsLight] 2xl:text-[16px] 2xl:leading-[26px] lg:text-[12px] lg:leading-[19px] text-[10px] leading-[16px]">
+                <p className="font-[300] dataLeftText4 lg:opacity-[0] font-[PoppinsLight] 2xl:text-[16px] 2xl:leading-[26px] lg:text-[12px] lg:leading-[19px] text-[10px] leading-[16px]">
                   between 2009-2022 on Ultra-High End Art Index
                 </p>
               </li>
               <li className="2xl:mt-[63px] lg:mt-[47px] mt-[16px]">
-                <p className="font-[NewEddy] 2xl:text-[60px] 2xl:leading-[70px] lg:text-[45px] lg:leading-[53px] text-[20px] leading-[23px]">
+                <p className="font-[NewEddy] dataLeftText5 lg:opacity-[0] 2xl:text-[60px] 2xl:leading-[70px] lg:text-[45px] lg:leading-[53px] text-[20px] leading-[23px]">
                   ~19% AVERAGE
                 </p>
-                <p className="font-[300] font-[PoppinsLight] 2xl:text-[16px] 2xl:leading-[26px] lg:text-[12px] lg:leading-[19px] text-[10px] leading-[16px]">
+                <p className="font-[300] dataLeftText6 lg:opacity-[0] font-[PoppinsLight] 2xl:text-[16px] 2xl:leading-[26px] lg:text-[12px] lg:leading-[19px] text-[10px] leading-[16px]">
                   allocation in art for HNW collectors, with ~30% for collectors &gt;$50m in net worth
                 </p>
               </li>
             </ul>
           </div>
           <div className="right w-full flex-1 flex lg:flex-row lg:gap-[30px] flex-col lg:items-end justify-start lg:pl-0 pl-[30px]">
-            <img
-              className="mt-[40px] lg:mt-0 2xl:w-[551px] 2xl:h-[447px] lg:w-[294px] lg:h-[238px] w-[275px] h-[223px]"
-              src={movePic}
-            />
+            <div className="step2 mt-[40px] shrink-0  relative lg:mt-0 2xl:w-[551px] 2xl:h-[447px] lg:w-[413px] lg:h-[335px] w-[275px] h-[223px]">
+              <img src={movePic} className="step2Pic absolute z-[999] w-full h-full object-cover" />
+            </div>
             <div className="desc">
-              <img className="lg:mt-0 mt-[18px]" src={forbes} />
-              <p className="font-[300] font-[PoppinsLight] lg:pt-[19px] pt-[10px] lg:text-[16px] lg:leading-[26px] text-[8px] leading-[13px]">
+              <img className="dataRightImg lg:mt-0 mt-[18px] lg:opacity-[0]" src={forbes} />
+              <p className="dataRightText1 font-[300] lg:opacity-[0] font-[PoppinsLight] lg:pt-[19px] pt-[10px] 2xl:text-[16px] 2xl:leading-[26px] lg:text-[12px] lg:leading-[19px] text-[8px] leading-[13px]">
                 Monet Nymphéas sold at
               </p>
-              <p className="font-[NewEddy] lg:text-[32px] lg:leading-[38px] text-[16px] leading-[19px]">$44.6M</p>
+              <p className="dataRightText2 font-[NewEddy] lg:opacity-[0] mt-[5px] 2xl:text-[32px] 2xl:leading-[38px] lg:text-[24px] lg:leading-[28px] text-[16px] leading-[19px]">
+                $44.6M
+              </p>
             </div>
           </div>
         </section>
-        <section className="explore w-full overflow-hidden  flex flex-col items-center justify-center 2xl:pt-[220px] lg:pt-[165px] pt-[245px]">
-          <p className="font-[PoppinsRegular] lg:text-[22px] lg:leading-[26px] text-[12px] leading-[14px]">
+        <section className="explore overflow-hidden sm:overflow-visible  flex flex-col items-center justify-center 2xl:pt-[220px] lg:pt-[165px] pt-[245px]">
+          <p className="font-[PoppinsRegular] exploreText1 lg:opacity-[0] lg:text-[22px] lg:leading-[26px] text-[12px] leading-[14px]">
             Own a Piece of History in 3 Simple Steps
           </p>
           <div className="font-[NewEddy] lg:text-[100px] lg:leading-[117px] text-[38px] leading-[44px]">
-            <p className="font-[PoppinsRegular] lg:text-[16px] font-[400] lg:leading-[19px] text-[12px] leading-[14px] 2xl:pt-[117px] lg:pt-[88px] pt-[45px]">
+            <p className="font-[PoppinsRegular] exploreText2 lg:opacity-[0] lg:text-[16px] font-[400] lg:leading-[19px] text-[12px] leading-[14px] 2xl:pt-[117px] lg:pt-[88px] pt-[45px]">
               <span>001</span>
               <span className="text-[#AAAAAA]"> / 003</span>
             </p>
-            <p className="lg:tracking-[8px] tracking-[3px]">EXPLORE</p>
+            <p className="exploreText3 lg:opacity-[0] lg:tracking-[8px] tracking-[3px]">EXPLORE</p>
           </div>
-          <p className="lg:text-[24px] lg:leading-[28px] text-[12px] leading-[14px] font-[PoppinsRegular] font-[400] 2xl:pt-[25px] lg:pt-[19px] pt-[10px] 2xl:px-[40px] text-center lg:px-[30px] px-[10px]">
+          <p className="exploreText4 lg:opacity-[0] lg:text-[24px] lg:leading-[28px] text-[12px] leading-[14px] font-[PoppinsRegular] font-[400] 2xl:pt-[25px] lg:pt-[19px] pt-[10px] 2xl:px-[40px] text-center lg:px-[30px] px-[10px]">
             Browse a selection of iconic masterpieces carefully handpicked by our expert curators from Sotheby&apos;s
             and Christie&apos;s.
           </p>
-          <ul className="flex items-center overflow-hidden justify-center lg:gap-[64px] 2xl:gap-[70px] gap-[29px] 2xl:pt-[200px] lg:pt-[150px] pt-[178px]">
-            <li className="shrink-0 2xl:w-[424px] 2xl:h-[648px] lg:w-[318px] lg:h-[486px] w-[159px] h-[243px]">
+          <ul className="flex overflow-hidden sm:overflow-visible items-center justify-center lg:gap-[64px] 2xl:gap-[70px] gap-[29px] 2xl:pt-[200px] lg:pt-[150px] pt-[178px]">
+            <li className="2xl:w-[424px] 2xl:h-[648px] lg:w-[318px] lg:h-[486px] w-[159px] h-[243px]">
               <img src={picA} />
             </li>
-            <li className="shrink-0 2xl:w-[424px] lg:w-[318px] w-[159px]">
-              <img
-                className="2xl:w-[424px] 2xl:h-[345px] lg:w-[318px] lg:h-[259px] w-[159px] h-[129px]"
-                src={movePic}
-              />
+            <li className="2xl:w-[424px] lg:w-[318px] w-[159px]">
+              <div className="step3 relative 2xl:w-[424px] 2xl:h-[345px] lg:w-[318px] lg:h-[259px] w-[159px] h-[129px]">
+                <img className="step3Pic absolute z-[999] w-full h-full object-cover" src={movePic} />
+              </div>
               <img
                 className="2xl:w-[424px] 2xl:h-[559px] lg:w-[318px] lg:h-[419px] w-[159px] h-[209px] 2xl:mt-[114px] lg:mt-[85px] mt-[29px]"
                 src={picC}
               />
             </li>
-            <li className="shrink-0 2xl:w-[424px] lg:w-[318px] w-[159px]">
+            <li className="2xl:w-[424px] lg:w-[318px] w-[159px]">
               <img className="2xl:w-[424px] 2xl:h-[683px] lg:w-[318px] lg:h-[512px] w-[159px] h-[256px]" src={picD} />
             </li>
           </ul>
@@ -592,7 +734,7 @@ const Home: FC = () => {
         <section className="invest w-full flex lg:flex-row flex-col-reverse items-start justify-start 2xl:px-[80px] lg:px-[60px] px-[20px] 2xl:pt-[240px] lg:pt-[180px] pt-[188px] 2xl:pb-[212px] lg:pb-[159px] pb-[60px]">
           <div className="invsetLeft w-full flex-1">
             <div className="investLeftOne flex items-center justify-center">
-              <div className="picList grid grid-cols-3 2xl:w-[547px] 2xl:h-[444px] lg:w-[410px] lg:h-[333px] w-[221px] h-[179px]">
+              <div className="picList step4 relative grid grid-cols-3 2xl:w-[547px] 2xl:h-[444px] lg:w-[410px] lg:h-[333px] w-[221px] h-[179px]">
                 <img className="pixA" src={pixA} />
                 <img className="pixB" src={pixB} />
                 <img className="pixC" src={pixC} />

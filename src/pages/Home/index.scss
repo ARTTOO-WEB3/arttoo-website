@@ -2,3 +2,8 @@
   width: 100% !important;
   height: 100% !important;
 }
+.step1Pic,
+.step2Pic,
+.step3Pic {
+  max-width: none !important; // 这里其实是为了解决max-width: 100%的问题
+}
