@@ -713,7 +713,7 @@ const Home: FC = () => {
             Browse a selection of iconic masterpieces carefully handpicked by our expert curators from Sotheby&apos;s
             and Christie&apos;s.
           </p>
-          <ul className="flex overflow-hidden sm:overflow-visible items-center justify-center lg:gap-[64px] 2xl:gap-[70px] gap-[29px] 2xl:pt-[200px] lg:pt-[150px] pt-[178px]">
+          <ul className="flex items-center overflow-hidden sm:overflow-visible justify-center lg:gap-[35px] 2xl:gap-[70px] gap-[29px] 2xl:pt-[200px] lg:pt-[150px] pt-[178px]">
             <li className="2xl:w-[424px] 2xl:h-[648px] lg:w-[318px] lg:h-[486px] w-[159px] h-[243px]">
               <img src={picA} />
             </li>
@@ -788,7 +788,7 @@ const Home: FC = () => {
                   src={starC}
                 />
                 <img
-                  className="hidden starB absolute top-[30%] right-[-30%] 2xl:w-[47px] lg:w-[47px] w-[25px] h-[auto]"
+                  className="hidden starB absolute top-[30%] right-[-20%] 2xl:w-[47px] lg:w-[47px] w-[25px] h-[auto]"
                   src={starB}
                 />
                 <img
@@ -796,7 +796,7 @@ const Home: FC = () => {
                   src={doorA}
                 />
                 <img
-                  className="hidden doorB absolute bottom-[-25%] right-[-25%]  z-[-1] 2xl:w-[229px] lg:w-[172px]  w-[94px] h-[auto]"
+                  className="hidden doorB absolute bottom-[-25%] right-[-23%]  z-[-1] 2xl:w-[229px] lg:w-[172px]  w-[94px] h-[auto]"
                   src={doorB}
                 />
                 <div className="fly grid grid-cols-3 block gap-[0] 2xl:w-[547px] 2xl:h-[444px] lg:w-[410px] lg:h-[333px] w-[221px] h-[179px]">
