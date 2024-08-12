@@ -490,7 +490,7 @@ const Home: FC = () => {
   )
   return (
     <div className="homeContainer w-full" ref={containerRef}>
-      <header className="fixed z-[10] w-full flex justify-between items-center lg:pt-[60px] 2xl:pt-[80px] pt-[30px] 2xl:px-[80px] lg:px-[60px] px-[20px]">
+      <header className="w-full bg-[#9c9c9c] flex justify-between items-center lg:pt-[60px] 2xl:pt-[80px] pt-[30px] 2xl:px-[80px] lg:px-[60px] px-[20px]">
         <div className="logo lg:w-[223px] lg:h-[43px] w-[145px] h-[28px]">
           <img className="lg:w-[223px] lg:h-[43px] w-[145px] h-[28px]" src={logo} alt="Arttoo" />
         </div>
@@ -576,7 +576,7 @@ const Home: FC = () => {
         </div>
       </header>
       <main className="w-full">
-        <section className="banner relative flex w-full flex-col items-start justify-start 2xl:pt-[123px] lg:pt-[103px] pt-[58px] pb-[100px] 2xl:pb-[327px] lg:pb-[245px] 2xl:px-[80px] lg:px-[60px] px-[20px] bg-[#9c9c9c]">
+        <section className="banner relative flex w-full flex-col items-start justify-start  pb-[100px] 2xl:pb-[327px] lg:pb-[245px] 2xl:px-[80px] lg:px-[60px] px-[20px] bg-[#9c9c9c]">
           <p className="font-[NewEddy] text-[32px] leading-[38px] tracking-[2px] lg:tracking-[10px] 2xl:text-[132px] 2xl:leading-[155px] lg:text-[99px] lg:leading-[116px] text-[#FFFFFF] lg:pt-[77px] 2xl:pt-[103px] pt-[112px]">
             OWN A PIECE OF
           </p>
